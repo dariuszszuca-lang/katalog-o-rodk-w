@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta: Soft Dark / Midnight Luxury */
-            --bg-body: #1c1e24; /* Bardzo ciemny grafit, nie czarny */
-            --bg-card: #252830; /* Jaśniejszy odcień dla kart */
+            /* Paleta: Soft Dark / Midnight Luxury - BEZ ZMIAN */
+            --bg-body: #1c1e24;
+            --bg-card: #252830;
             --bg-card-hover: #2c3039;
-            --accent: #d4af37; /* Klasyczne, stonowane złoto */
+            --accent: #d4af37; /* Złoto */
             --accent-glow: rgba(212, 175, 55, 0.15);
-            --text-main: #e2e4e9; /* Złamana biel */
-            --text-muted: #9ca3af; /* Szary */
+            --text-main: #e2e4e9;
+            --text-muted: #9ca3af;
             --border-subtle: rgba(255, 255, 255, 0.08);
         }
 
@@ -31,7 +31,6 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             overflow-x: hidden;
-            /* Subtelne światło w tle */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 1) 0%, transparent 60%),
                 radial-gradient(circle at 85% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
@@ -43,13 +42,13 @@
             font-weight: 500;
         }
 
-        /* Header */
+        /* --- HEADER & LOGO --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(28, 30, 36, 0.85);
+            background: rgba(28, 30, 36, 0.95);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -58,18 +57,46 @@
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            text-decoration: none;
         }
 
-        .logo span {
+        /* Nowa grafika logo (CSS Shapes) */
+        .logo-symbol {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            background: linear-gradient(135deg, var(--accent), #8a6e2f);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            inset: 30%;
+            background: var(--bg-body);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.7rem;
             color: var(--accent);
+            font-weight: 400;
+            letter-spacing: 4px;
+            margin-top: 2px;
         }
 
         .contact-bar {
@@ -105,7 +132,7 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* Hero */
+        /* --- HERO --- */
         .hero {
             text-align: center;
             padding: 90px 20px 70px;
@@ -130,7 +157,7 @@
             margin: 0 auto;
         }
 
-        /* Recommended Section */
+        /* --- SEKCJA PREMIUM --- */
         .recommended-section {
             max-width: 1200px;
             margin: 0 auto 80px;
@@ -139,7 +166,7 @@
 
         .card-premium {
             background: linear-gradient(145deg, #2a2d36, #22252c);
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Złota ramka */
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 16px;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -177,7 +204,6 @@
 
         .location-highlight {
             color: var(--accent);
-            font-family: 'Outfit', sans-serif;
             font-weight: 500;
             font-size: 1.1rem;
             margin-bottom: 25px;
@@ -197,6 +223,7 @@
             list-style: none;
             border-top: 1px solid var(--border-subtle);
             padding-top: 25px;
+            margin-bottom: 30px;
         }
 
         .details-list li {
@@ -204,6 +231,25 @@
             color: #d1d5db;
             display: flex;
             gap: 12px;
+        }
+
+        .btn-visit-premium {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-body);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            transition: 0.3s;
+            max-width: 250px;
+        }
+        .btn-visit-premium:hover {
+            background: #e5c150;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
         .premium-visual {
@@ -214,7 +260,6 @@
             justify-content: center;
         }
 
-        /* Abstrakcyjny placeholder zamiast zdjęcia */
         .placeholder-art {
             width: 100%;
             height: 100%;
@@ -240,7 +285,7 @@
             font-style: italic;
         }
 
-        /* Catalog Grid */
+        /* --- KATALOG GRID --- */
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -266,6 +311,8 @@
             padding: 30px;
             transition: all 0.4s ease;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -307,22 +354,49 @@
             line-height: 1.4;
         }
         .info-row span {
-            color: var(--accent); /* Ikona/punktor */
+            color: var(--accent);
         }
 
-        /* Modal */
+        .card-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Styl nowego przycisku w kartach */
+        .btn-card-visit {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-card-visit:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* --- MODAL / POPUP --- */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             pointer-events: none;
-            transition: 0.3s;
-            z-index: 1000;
+            transition: 0.3s ease;
+            z-index: 9999;
         }
         .modal-overlay.active { opacity: 1; pointer-events: all; }
 
@@ -333,9 +407,10 @@
             border-radius: 12px;
             width: 90%;
             max-width: 450px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
             transform: scale(0.95);
-            transition: 0.3s;
+            transition: 0.3s ease;
+            position: relative;
         }
         .modal-overlay.active .modal { transform: scale(1); }
 
@@ -343,12 +418,13 @@
         
         .close-btn {
             position: absolute;
-            top: 20px;
+            top: 15px;
             right: 20px;
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 1.5rem;
+            font-size: 2rem;
+            line-height: 1;
             cursor: pointer;
         }
         .close-btn:hover { color: var(--text-main); }
@@ -402,17 +478,24 @@
             .card-premium { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             header { flex-direction: column; gap: 20px; }
+            .logo { margin-bottom: 10px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Katalog <span>Ośrodków</span></div>
+        <div class="logo">
+            <div class="logo-symbol"></div>
+            <div class="logo-text">
+                Katalog
+                <span>Ośrodków</span>
+            </div>
+        </div>
         <div class="contact-bar">
             <div class="contact-item">731 395 295</div>
             <div class="contact-item">kontakt@osrodek-myway.pl</div>
-            <button class="btn-gold" onclick="openModal()">+ Zgłoś ośrodek</button>
+            <button class="btn-gold" id="openModalBtn">+ Zgłoś ośrodek</button>
         </div>
     </header>
 
@@ -436,6 +519,7 @@
                     <li><span>🏢</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
                     <li><span>📞</span> +48 731 395 295</li>
                 </ul>
+                <a href="http://osrodek-myway.pl" target="_blank" class="btn-visit-premium">Odwiedź stronę</a>
             </div>
             <div class="premium-visual">
                 <div class="placeholder-art">
@@ -454,6 +538,9 @@
             <h3>Nowa Droga</h3>
             <div class="info-row"><span>📍</span> ul. Zielna 40, 51-313 Wrocław</div>
             <div class="info-row"><span>📞</span> +48 795 589 872</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Nowa+Droga+ośrodek+terapii+Wrocław" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -461,6 +548,9 @@
             <h3>Ośrodek Spichlerz</h3>
             <div class="info-row"><span>📍</span> Dyblin 1A, 87-610 Dobrzyń nad Wisłą</div>
             <div class="info-row"><span>📞</span> +48 884 916 008</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Spichlerz+Dobrzyń+nad+Wisłą" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -468,6 +558,9 @@
             <h3>Zielona Klinika</h3>
             <div class="info-row"><span>📍</span> Uniszowice 57G, 21-030 Motycz</div>
             <div class="info-row"><span>📞</span> +48 723 338 337</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Zielona+Klinika+Uniszowice" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -475,6 +568,9 @@
             <h3>MCLU "Teresa Wagner"</h3>
             <div class="info-row"><span>📍</span> ul. Poznańska 109, 66-300 Międzyrzecz</div>
             <div class="info-row"><span>📞</span> +48 95 742 87 56</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=MCLU+Teresa+Wagner+Międzyrzecz" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -482,6 +578,9 @@
             <h3>Klinika Patromed</h3>
             <div class="info-row"><span>📍</span> ul. Trębacka 38, 93-367 Łódź</div>
             <div class="info-row"><span>📞</span> +48 660 254 050</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Klinika+Patromed+Łódź" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -489,6 +588,9 @@
             <h3>TU i TERAZ</h3>
             <div class="info-row"><span>📍</span> ul. Zakamycze 37A, 30-240 Kraków</div>
             <div class="info-row"><span>📞</span> +48 669 969 209</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+TU+i+TERAZ+Kraków" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -496,6 +598,9 @@
             <h3>Vita Nova</h3>
             <div class="info-row"><span>📍</span> ul. Szpitalna 16A, 05-270 Marki</div>
             <div class="info-row"><span>📞</span> +48 572 905 999</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Vita+Nova+Marki+leczenie+uzależnień" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -503,13 +608,19 @@
             <h3>OPM-MED</h3>
             <div class="info-row"><span>📍</span> ul. Jagiełły 8A, 45-920 Opole</div>
             <div class="info-row"><span>📞</span> +48 882 597 992</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=OPM-MED+Opole" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
             <div class="card-header"><span class="tag-voivodeship">Podkarpackie</span></div>
-            <h3>Ośrodek w Iwoniczu-Zdroju</h3>
+            <h3>Iwonicz-Zdrój</h3>
             <div class="info-row"><span>📍</span> ul. Piwarskiego 26, 38-440 Iwonicz-Zdrój</div>
             <div class="info-row"><span>📞</span> +48 517 060 303</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Terapii+Iwonicz+Zdrój" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -517,6 +628,9 @@
             <h3>Virtus</h3>
             <div class="info-row"><span>📍</span> ul. Antoniuk Fabryczny 10/1, Białystok</div>
             <div class="info-row"><span>📞</span> +48 698 335 897</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Virtus+Białystok" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -524,6 +638,9 @@
             <h3>Ośrodek ARKA</h3>
             <div class="info-row"><span>📍</span> ul. Spacerowa 4, 43-460 Wisła</div>
             <div class="info-row"><span>📞</span> +48 783 218 321</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Prywatny+Ośrodek+ARKA+Wisła" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -531,6 +648,9 @@
             <h3>NASZ DOM</h3>
             <div class="info-row"><span>📍</span> ul. Silniczna 11, 26-001 Dąbrowa</div>
             <div class="info-row"><span>📞</span> +48 698 323 698</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+NASZ+DOM+Dąbrowa" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -538,6 +658,9 @@
             <h3>In Puris</h3>
             <div class="info-row"><span>📍</span> Huta Żuławska 10A, 82-316 Milejowo</div>
             <div class="info-row"><span>📞</span> +48 602 330 352</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+In+Puris+Milejowo" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -545,6 +668,9 @@
             <h3>AGNUS</h3>
             <div class="info-row"><span>📍</span> Aleja Stachury 2, 60-461 Poznań</div>
             <div class="info-row"><span>📞</span> +48 533 221 555</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Agnus+Poznań" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
         <div class="card">
@@ -552,13 +678,16 @@
             <h3>Centrum ANON</h3>
             <div class="info-row"><span>📍</span> ul. Pocztowa 13, 72-100 Goleniów</div>
             <div class="info-row"><span>📞</span> +48 91 407 18 10</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Centrum+ANON+Goleniów" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
         </div>
 
     </section>
 
-    <div class="modal-overlay" id="modal">
+    <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <button class="close-btn" onclick="toggleModal()">&times;</button>
+            <button class="close-btn" id="closeModalBtn">&times;</button>
             <h2>Zgłoś ośrodek</h2>
             <p style="color: var(--text-muted); margin-bottom: 20px;">Wypełnij dane, aby dodać placówkę.</p>
             <form id="centerForm">
@@ -589,26 +718,48 @@
     </footer>
 
     <script>
-        function toggleModal() {
-            document.getElementById('modal').classList.toggle('active');
+        // Pobieranie elementów
+        const modalOverlay = document.getElementById('modalOverlay');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const centerForm = document.getElementById('centerForm');
+
+        // Funkcje otwierania/zamykania
+        function openModal() {
+            modalOverlay.classList.add('active');
         }
 
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) toggleModal();
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        // Event Listeners
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Zamykanie po kliknięciu w tło (overlay)
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
         });
 
-        document.getElementById('centerForm').addEventListener('submit', function(e) {
+        // Obsługa formularza
+        centerForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button');
-            const original = btn.innerText;
-            btn.innerText = "Wysłano!";
-            btn.style.background = "#4ade80"; // Sukces
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Wysłano pomyślnie!";
+            btn.style.background = "#4ade80"; // Zielony kolor sukcesu
+            btn.style.color = "#1c1e24";
+
             setTimeout(() => {
-                toggleModal();
-                btn.innerText = original;
+                closeModal();
+                btn.innerText = originalText;
                 btn.style.background = "var(--accent)";
                 this.reset();
-            }, 1500);
+            }, 2000);
         });
     </script>
 </body>
