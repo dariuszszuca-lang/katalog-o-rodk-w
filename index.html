@@ -3,121 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Ośrodków - Wybierz swoje miejsce</title>
+    <title>Katalog Ośrodków - Premium Addiction Treatment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta: Soft Dark / Midnight Luxury */
-            --bg-body: #1c1e24; /* Bardzo ciemny grafit, nie czarny */
-            --bg-card: #252830; /* Jaśniejszy odcień dla kart */
-            --bg-card-hover: #2c3039;
-            --accent: #d4af37; /* Klasyczne, stonowane złoto */
-            --accent-glow: rgba(212, 175, 55, 0.15);
-            --text-main: #e2e4e9; /* Złamana biel */
-            --text-muted: #9ca3af; /* Szary */
-            --border-subtle: rgba(255, 255, 255, 0.08);
+            /* Midnight Luxury Palette */
+            --bg-dark: #0a0a0c;
+            --bg-panel: #141416;
+            --bg-card: #1c1c1f;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            --text-main: #ffffff;
+            --text-muted: #8b8b93;
+            --border-glow: rgba(212, 175, 55, 0.3);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
-            /* Subtelne światło w tle */
+            /* Subtelne tło animowane */
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 1) 0%, transparent 60%),
-                radial-gradient(circle at 85% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+                radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(66, 66, 80, 0.2) 0%, transparent 25%);
             min-height: 100vh;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-        }
-
-        /* Header */
+        /* --- Header & Logo WOW --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(28, 30, 36, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .logo {
-            font-size: 1.4rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        /* Logo Graficzne w CSS */
+        .logo-symbol {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            background: var(--bg-panel);
+            border-radius: 12px;
+            border: 1px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .logo-symbol::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(transparent, var(--gold-primary), transparent);
+            animation: rotateLogo 4s linear infinite;
+        }
+
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            background: var(--bg-dark);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .logo-inner-k {
+            position: relative;
+            z-index: 2;
+            color: var(--gold-primary);
+            font-weight: 900;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #8b8b93);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-group {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-phone {
+            font-weight: 600;
             color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            letter-spacing: 0.5px;
         }
+        .header-phone span { color: var(--gold-primary); }
 
-        .logo span {
-            color: var(--accent);
-        }
-
-        .contact-bar {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .contact-item {
-            color: var(--text-muted);
-            transition: 0.3s;
-        }
-        .contact-item:hover { color: var(--accent); }
-
-        .btn-gold {
-            padding: 10px 24px;
+        .btn-report {
+            padding: 12px 28px;
             background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            letter-spacing: 1px;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
             text-transform: uppercase;
             font-size: 0.75rem;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
         }
 
-        .btn-gold:hover {
-            background: var(--accent);
-            color: var(--bg-body);
-            box-shadow: 0 0 15px var(--accent-glow);
+        .btn-report::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--gold-primary);
+            transition: var(--transition);
+            z-index: -1;
         }
 
-        /* Hero */
+        .btn-report:hover {
+            color: #000;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        .btn-report:hover::before { left: 0; }
+
+        /* --- Hero --- */
         .hero {
             text-align: center;
-            padding: 90px 20px 70px;
-            max-width: 900px;
+            padding: 100px 20px 80px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, #9ca3af);
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(to bottom, #ffffff 0%, #8b8b93 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -130,22 +185,29 @@
             margin: 0 auto;
         }
 
-        /* Recommended Section */
-        .recommended-section {
+        /* --- Premium Section (My Way) --- */
+        .section-wrapper {
             max-width: 1200px;
-            margin: 0 auto 80px;
+            margin: 0 auto 100px;
             padding: 0 20px;
         }
 
         .card-premium {
-            background: linear-gradient(145deg, #2a2d36, #22252c);
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Złota ramka */
-            border-radius: 16px;
+            background: #141416;
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             overflow: hidden;
-            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.5);
             position: relative;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.8);
+        }
+
+        .card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
         }
 
         .premium-content {
@@ -153,194 +215,229 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            z-index: 2;
         }
 
-        .badge-premium {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 6px 14px;
+        .badge-wow {
+            background: linear-gradient(90deg, #d4af37, #f3e5ab);
+            color: #000;
+            padding: 6px 16px;
             border-radius: 50px;
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             align-self: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .premium-content h2 {
-            font-size: 3rem;
-            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
             margin-bottom: 10px;
-        }
-
-        .location-highlight {
-            color: var(--accent);
-            font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .premium-desc {
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-size: 1.05rem;
         }
 
-        .details-list {
-            list-style: none;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 25px;
+        .info-grid {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 40px;
         }
 
-        .details-list li {
-            margin-bottom: 12px;
-            color: #d1d5db;
+        .info-item {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 15px;
+            color: #d1d1d1;
+        }
+
+        .icon-box {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-primary);
+        }
+
+        .btn-gold-fill {
+            padding: 16px 32px;
+            background: var(--gold-gradient);
+            color: #0a0a0c;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .btn-gold-fill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
         .premium-visual {
-            background: linear-gradient(135deg, #1e2025, #111);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Abstrakcyjny placeholder zamiast zdjęcia */
-        .placeholder-art {
-            width: 100%;
-            height: 100%;
-            min-height: 400px;
+            background: #1c1c1f;
             position: relative;
             overflow: hidden;
-        }
-        .placeholder-art::before {
-            content: '';
-            position: absolute;
-            top: -20%; right: -20%;
-            width: 80%; height: 80%;
-            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .placeholder-text {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: rgba(255,255,255,0.05);
-            font-style: italic;
+            /* Placeholder pattern */
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px);
         }
 
-        /* Catalog Grid */
-        .section-title {
+        .premium-visual h3 {
+            position: absolute;
+            bottom: 40px; left: 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+        }
+
+        /* --- Catalog Grid --- */
+        .catalog-title {
             text-align: center;
             margin-bottom: 50px;
             font-size: 1.5rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
         }
 
-        .catalog-grid {
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
             max-width: 1200px;
-            margin: 0 auto 100px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
         .card {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
             padding: 30px;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 300px;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            background: var(--bg-card-hover);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #232326;
+            transform: translateY(-10px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
+        .card-top {
+            margin-bottom: 20px;
         }
 
-        .tag-voivodeship {
+        .tag {
             font-size: 0.65rem;
-            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid var(--border-subtle);
-            padding: 5px 10px;
-            border-radius: 4px;
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 6px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
-            color: #f1f5f9;
+            color: #fff;
+            font-weight: 500;
         }
 
-        .info-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 8px;
+        .card-details {
             color: var(--text-muted);
             font-size: 0.9rem;
-            line-height: 1.4;
+            line-height: 1.6;
         }
-        .info-row span {
-            color: var(--accent); /* Ikona/punktor */
+        
+        .detail-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .detail-row span { color: var(--gold-primary); }
+
+        .btn-card-action {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            background: transparent;
         }
 
-        /* Modal */
+        .card:hover .btn-card-action {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* --- Modal Popup --- */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             opacity: 0;
             pointer-events: none;
-            transition: 0.3s;
-            z-index: 1000;
+            transition: opacity 0.3s ease;
         }
-        .modal-overlay.active { opacity: 1; pointer-events: all; }
 
-        .modal {
-            background: #252830;
-            border: 1px solid var(--border-subtle);
-            padding: 40px;
-            border-radius: 12px;
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-box {
+            background: #141416;
+            border: 1px solid var(--border-glow);
             width: 90%;
-            max-width: 450px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            transform: scale(0.95);
-            transition: 0.3s;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 24px;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 0 50px rgba(0,0,0,0.7);
         }
-        .modal-overlay.active .modal { transform: scale(1); }
 
-        .modal h2 { margin-bottom: 10px; color: var(--text-main); }
-        
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -350,220 +447,329 @@
             color: var(--text-muted);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: 0.3s;
         }
-        .close-btn:hover { color: var(--text-main); }
+        .close-btn:hover { color: #fff; }
 
-        .form-group { margin-bottom: 15px; }
-        
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--gold-primary);
+        }
+
+        .form-group { margin-bottom: 20px; }
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-size: 0.8rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-
         .form-group input {
             width: 100%;
-            padding: 12px;
-            background: #1c1e24;
-            border: 1px solid var(--border-subtle);
-            border-radius: 4px;
-            color: var(--text-main);
-            outline: none;
-        }
-        .form-group input:focus { border-color: var(--accent); }
-
-        .submit-btn {
-            width: 100%;
             padding: 14px;
-            background: var(--accent);
-            color: #1c1e24;
-            font-weight: 700;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
+            background: #0a0a0c;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: #fff;
+            outline: none;
             transition: 0.3s;
         }
-        .submit-btn:hover { background: #bfa140; }
+        .form-group input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
 
+        .submit-modal-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--gold-primary);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-modal-btn:hover { background: #f3e5ab; }
+
+        /* --- Footer --- */
         footer {
+            margin-top: 100px;
+            padding: 60px 20px;
+            background: #0a0a0c;
+            border-top: 1px solid rgba(255,255,255,0.05);
             text-align: center;
-            padding: 50px;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background: #1a1c22;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        @keyframes rotateLogo {
+            100% { transform: rotate(360deg); }
         }
 
         @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
             .card-premium { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            header { flex-direction: column; gap: 20px; }
+            .header-phone { display: none; }
+            .contact-group { gap: 10px; }
+            .premium-visual { min-height: 250px; order: -1; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Katalog <span>Ośrodków</span></div>
-        <div class="contact-bar">
-            <div class="contact-item">731 395 295</div>
-            <div class="contact-item">kontakt@osrodek-myway.pl</div>
-            <button class="btn-gold" onclick="openModal()">+ Zgłoś ośrodek</button>
+        <div class="logo-container">
+            <div class="logo-symbol">
+                <span class="logo-inner-k">K</span>
+            </div>
+            <div class="logo-text">Katalog<br><span style="color: var(--text-muted); font-size: 0.8rem; letter-spacing: 4px;">Ośrodków</span></div>
+        </div>
+        
+        <div class="contact-group">
+            <div class="header-phone">Infolinia: <span>731 395 295</span></div>
+            <button class="btn-report" id="reportBtn">Zgłoś Ośrodek</button>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Wybierz swoje miejsce</h1>
-        <p>Ekskluzywna baza prywatnych ośrodków terapii. <br>Znajdź przestrzeń, która pozwoli Ci zacząć od nowa.</p>
+        <h1>Wybierz swoją<br>nową drogę</h1>
+        <p>Ekskluzywna selekcja prywatnych ośrodków leczenia uzależnień w Polsce. <br>Gwarancja dyskrecji, profesjonalizmu i najwyższych standardów.</p>
     </section>
 
-    <section class="recommended-section">
+    <section class="section-wrapper">
         <div class="card-premium">
             <div class="premium-content">
-                <div class="badge-premium">Rekomendacja</div>
+                <div class="badge-wow">Rekomendacja 2024</div>
                 <h2>My Way</h2>
-                <div class="location-highlight">
-                    <span>📍</span> Kąpino k. Wejherowa
-                </div>
+                <p style="color: var(--gold-primary); font-style: italic; margin-bottom: 20px; font-family: 'Playfair Display', serif;">Kąpino k. Wejherowa, Pomorskie</p>
+                
                 <p class="premium-desc">
-                    Prywatny ośrodek o najwyższym standardzie. Miejsce, gdzie profesjonalna terapia łączy się z dyskrecją i komfortem hotelowym. Idealne warunki do odzyskania równowagi w otoczeniu natury.
+                    Miejsce, gdzie terapia spotyka się z luksusem i naturą. Indywidualne podejście, kameralna atmosfera i nowoczesne metody leczenia w sercu Kaszub.
                 </p>
-                <ul class="details-list">
-                    <li><span>🏢</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
-                    <li><span>📞</span> +48 731 395 295</li>
-                </ul>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="icon-box">📍</div>
+                        <span>ul. Wichrowe Wzgórza 21, 84-200 Kąpino</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box">📞</div>
+                        <span>+48 731 395 295</span>
+                    </div>
+                </div>
+
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn-gold-fill">Odwiedź stronę ośrodka</a>
             </div>
+            
             <div class="premium-visual">
-                <div class="placeholder-art">
-                    <div class="placeholder-text">My Way</div>
+                <h3>My<br>Way.</h3>
+            </div>
+        </div>
+    </section>
+
+    <h3 class="catalog-title">Pozostałe wyróżnione lokalizacje</h3>
+
+    <div class="grid-container">
+
+        <div class="card">
+            <div class="card-top">
+                <span class="tag">Dolnośląskie</span>
+                <h3>Nowa Droga</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Zielna 40, Wrocław</div>
+                    <div class="detail-row"><span>📞</span> +48 795 589 872</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <h3 class="section-title">Pozostałe Ośrodki w Polsce</h3>
-
-    <section class="catalog-grid">
-
-        <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Dolnośląskie</span></div>
-            <h3>Nowa Droga</h3>
-            <div class="info-row"><span>📍</span> ul. Zielna 40, 51-313 Wrocław</div>
-            <div class="info-row"><span>📞</span> +48 795 589 872</div>
+            <a href="https://www.google.com/search?q=Ośrodek+Terapii+Uzależnień+Nowa+Droga+Wrocław" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Kujawsko-Pom.</span></div>
-            <h3>Ośrodek Spichlerz</h3>
-            <div class="info-row"><span>📍</span> Dyblin 1A, 87-610 Dobrzyń nad Wisłą</div>
-            <div class="info-row"><span>📞</span> +48 884 916 008</div>
+            <div class="card-top">
+                <span class="tag">Kujawsko-Pomorskie</span>
+                <h3>Ośrodek Spichlerz</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> Dyblin 1A, Dobrzyń nad Wisłą</div>
+                    <div class="detail-row"><span>📞</span> +48 884 916 008</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Ośrodek+Terapii+Uzależnień+Spichlerz+Dobrzyń" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Lubelskie</span></div>
-            <h3>Zielona Klinika</h3>
-            <div class="info-row"><span>📍</span> Uniszowice 57G, 21-030 Motycz</div>
-            <div class="info-row"><span>📞</span> +48 723 338 337</div>
+            <div class="card-top">
+                <span class="tag">Lubelskie</span>
+                <h3>Zielona Klinika</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> Uniszowice 57G, Motycz</div>
+                    <div class="detail-row"><span>📞</span> +48 723 338 337</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Zielona+Klinika+Leczenia+Uzależnień+Lublin" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Lubuskie</span></div>
-            <h3>MCLU "Teresa Wagner"</h3>
-            <div class="info-row"><span>📍</span> ul. Poznańska 109, 66-300 Międzyrzecz</div>
-            <div class="info-row"><span>📞</span> +48 95 742 87 56</div>
+            <div class="card-top">
+                <span class="tag">Lubuskie</span>
+                <h3>MCLU "Teresa Wagner"</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Poznańska 109, Międzyrzecz</div>
+                    <div class="detail-row"><span>📞</span> +48 95 742 87 56</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Międzyrzeckie+Centrum+Leczenia+Uzależnień" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Łódzkie</span></div>
-            <h3>Klinika Patromed</h3>
-            <div class="info-row"><span>📍</span> ul. Trębacka 38, 93-367 Łódź</div>
-            <div class="info-row"><span>📞</span> +48 660 254 050</div>
+            <div class="card-top">
+                <span class="tag">Łódzkie</span>
+                <h3>Klinika Patromed</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Trębacka 38, Łódź</div>
+                    <div class="detail-row"><span>📞</span> +48 660 254 050</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Klinika+Leczenia+Uzależnień+Patromed+Łódź" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Małopolskie</span></div>
-            <h3>TU i TERAZ</h3>
-            <div class="info-row"><span>📍</span> ul. Zakamycze 37A, 30-240 Kraków</div>
-            <div class="info-row"><span>📞</span> +48 669 969 209</div>
+            <div class="card-top">
+                <span class="tag">Małopolskie</span>
+                <h3>TU i TERAZ</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Zakamycze 37A, Kraków</div>
+                    <div class="detail-row"><span>📞</span> +48 669 969 209</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Ośrodek+Terapii+Uzależnień+TU+i+TERAZ+Kraków" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Mazowieckie</span></div>
-            <h3>Vita Nova</h3>
-            <div class="info-row"><span>📍</span> ul. Szpitalna 16A, 05-270 Marki</div>
-            <div class="info-row"><span>📞</span> +48 572 905 999</div>
+            <div class="card-top">
+                <span class="tag">Mazowieckie</span>
+                <h3>Vita Nova</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Szpitalna 16A, Marki</div>
+                    <div class="detail-row"><span>📞</span> +48 572 905 999</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Ośrodek+Vita+Nova+Marki" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Opolskie</span></div>
-            <h3>OPM-MED</h3>
-            <div class="info-row"><span>📍</span> ul. Jagiełły 8A, 45-920 Opole</div>
-            <div class="info-row"><span>📞</span> +48 882 597 992</div>
+            <div class="card-top">
+                <span class="tag">Opolskie</span>
+                <h3>OPM-MED</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Jagiełły 8A, Opole</div>
+                    <div class="detail-row"><span>📞</span> +48 882 597 992</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=OPM-MED+Ośrodek+Leczenia+Uzależnień+Opole" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Podkarpackie</span></div>
-            <h3>Ośrodek w Iwoniczu-Zdroju</h3>
-            <div class="info-row"><span>📍</span> ul. Piwarskiego 26, 38-440 Iwonicz-Zdrój</div>
-            <div class="info-row"><span>📞</span> +48 517 060 303</div>
+            <div class="card-top">
+                <span class="tag">Podkarpackie</span>
+                <h3>Ośrodek w Iwoniczu</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Piwarskiego 26, Iwonicz-Zdrój</div>
+                    <div class="detail-row"><span>📞</span> +48 517 060 303</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Terapii+Uzależnień+Iwonicz+Zdrój" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Podlaskie</span></div>
-            <h3>Virtus</h3>
-            <div class="info-row"><span>📍</span> ul. Antoniuk Fabryczny 10/1, Białystok</div>
-            <div class="info-row"><span>📞</span> +48 698 335 897</div>
+            <div class="card-top">
+                <span class="tag">Podlaskie</span>
+                <h3>Virtus</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Antoniuk Fabryczny 10/1, Białystok</div>
+                    <div class="detail-row"><span>📞</span> +48 698 335 897</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Ośrodek+Leczenia+Uzależnień+Virtus+Białystok" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Śląskie</span></div>
-            <h3>Ośrodek ARKA</h3>
-            <div class="info-row"><span>📍</span> ul. Spacerowa 4, 43-460 Wisła</div>
-            <div class="info-row"><span>📞</span> +48 783 218 321</div>
+            <div class="card-top">
+                <span class="tag">Śląskie</span>
+                <h3>Ośrodek ARKA</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Spacerowa 4, Wisła</div>
+                    <div class="detail-row"><span>📞</span> +48 783 218 321</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Terapii+Uzależnień+ARKA+Wisła" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Świętokrzyskie</span></div>
-            <h3>NASZ DOM</h3>
-            <div class="info-row"><span>📍</span> ul. Silniczna 11, 26-001 Dąbrowa</div>
-            <div class="info-row"><span>📞</span> +48 698 323 698</div>
+            <div class="card-top">
+                <span class="tag">Świętokrzyskie</span>
+                <h3>NASZ DOM</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Silniczna 11, Dąbrowa</div>
+                    <div class="detail-row"><span>📞</span> +48 698 323 698</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Leczenia+Uzależnień+NASZ+DOM+Kielce" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Warm-Maz.</span></div>
-            <h3>In Puris</h3>
-            <div class="info-row"><span>📍</span> Huta Żuławska 10A, 82-316 Milejowo</div>
-            <div class="info-row"><span>📞</span> +48 602 330 352</div>
+            <div class="card-top">
+                <span class="tag">Warmińsko-Mazurskie</span>
+                <h3>In Puris</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> Huta Żuławska 10A, Milejowo</div>
+                    <div class="detail-row"><span>📞</span> +48 602 330 352</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Terapii+In+Puris" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Wielkopolskie</span></div>
-            <h3>AGNUS</h3>
-            <div class="info-row"><span>📍</span> Aleja Stachury 2, 60-461 Poznań</div>
-            <div class="info-row"><span>📞</span> +48 533 221 555</div>
+            <div class="card-top">
+                <span class="tag">Wielkopolskie</span>
+                <h3>AGNUS</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> Aleja Stachury 2, Poznań</div>
+                    <div class="detail-row"><span>📞</span> +48 533 221 555</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Leczenia+Uzależnień+AGNUS+Poznań" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-voivodeship">Zachodniopom.</span></div>
-            <h3>Centrum ANON</h3>
-            <div class="info-row"><span>📍</span> ul. Pocztowa 13, 72-100 Goleniów</div>
-            <div class="info-row"><span>📞</span> +48 91 407 18 10</div>
+            <div class="card-top">
+                <span class="tag">Zachodniopomorskie</span>
+                <h3>Centrum ANON</h3>
+                <div class="card-details">
+                    <div class="detail-row"><span>📍</span> ul. Pocztowa 13, Goleniów</div>
+                    <div class="detail-row"><span>📞</span> +48 91 407 18 10</div>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=Centrum+Psychoterapii+i+Leczenia+Uzależnień+ANON" target="_blank" class="btn-card-action">Zobacz więcej</a>
         </div>
 
-    </section>
+    </div>
 
     <div class="modal-overlay" id="modal">
-        <div class="modal">
-            <button class="close-btn" onclick="toggleModal()">&times;</button>
-            <h2>Zgłoś ośrodek</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Wypełnij dane, aby dodać placówkę.</p>
-            <form id="centerForm">
+        <div class="modal-box">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h2 class="form-title">Zgłoś Ośrodek</h2>
+            <p style="color: #8b8b93; margin-bottom: 30px;">Dołącz do bazy premium. Wypełnij dane, a my zweryfikujemy placówkę.</p>
+            
+            <form id="submissionForm">
                 <div class="form-group">
-                    <label>Nazwa</label>
+                    <label>Nazwa Ośrodka</label>
                     <input type="text" required>
                 </div>
                 <div class="form-group">
@@ -578,37 +784,62 @@
                     <label>Telefon</label>
                     <input type="text" required>
                 </div>
-                <button type="submit" class="submit-btn">Wyślij zgłoszenie</button>
+                <button type="submit" class="submit-modal-btn">Wyślij zgłoszenie</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Katalog Ośrodków. Wszelkie prawa zastrzeżone.</p>
-        <p style="margin-top: 10px; color: var(--accent);">kontakt@osrodek-myway.pl</p>
+        <div class="footer-logo">KO</div>
+        <p style="color: #666; font-size: 0.9rem;">&copy; 2024 Katalog Ośrodków. Wszelkie prawa zastrzeżone.</p>
+        <p style="margin-top: 15px; color: var(--gold-primary);">kontakt@osrodek-myway.pl | 731 395 295</p>
     </footer>
 
     <script>
-        function toggleModal() {
-            document.getElementById('modal').classList.toggle('active');
-        }
+        // Logika modala
+        const modal = document.getElementById('modal');
+        const openBtn = document.getElementById('reportBtn');
+        const closeBtn = document.getElementById('closeModal');
+        const form = document.getElementById('submissionForm');
 
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) toggleModal();
+        // Otwieranie
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
         });
 
-        document.getElementById('centerForm').addEventListener('submit', function(e) {
+        // Zamykanie X
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Zamykanie tło
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Obsługa formularza
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = this.querySelector('button');
-            const original = btn.innerText;
-            btn.innerText = "Wysłano!";
-            btn.style.background = "#4ade80"; // Sukces
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+
+            btn.innerText = "Wysyłanie...";
+            btn.style.backgroundColor = "#fff";
+            
             setTimeout(() => {
-                toggleModal();
-                btn.innerText = original;
-                btn.style.background = "var(--accent)";
-                this.reset();
-            }, 1500);
+                btn.innerText = "Dziękujemy!";
+                btn.style.backgroundColor = "#4ade80"; // Zielony sukces
+                
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = "var(--gold-primary)";
+                    form.reset();
+                }, 1000);
+            }, 1000);
         });
     </script>
 </body>
