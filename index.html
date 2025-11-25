@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Ośrodków - Premium Collection</title>
+    <title>Katalog Ośrodków - Wybierz swoje miejsce</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Theme: Midnight Luxury (Bez zmian kolorów, tylko ulepszenia) */
-            --bg-body: #1c1e24;
-            --bg-card: #252830;
+            /* Paleta: Soft Dark / Midnight Luxury */
+            --bg-body: #1c1e24; /* Bardzo ciemny grafit, nie czarny */
+            --bg-card: #252830; /* Jaśniejszy odcień dla kart */
             --bg-card-hover: #2c3039;
-            --accent: #d4af37; /* Gold */
-            --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #bfa140 100%);
-            --accent-glow: rgba(212, 175, 55, 0.25);
-            --text-main: #e2e4e9;
-            --text-muted: #9ca3af;
+            --accent: #d4af37; /* Klasyczne, stonowane złoto */
+            --accent-glow: rgba(212, 175, 55, 0.15);
+            --text-main: #e2e4e9; /* Złamana biel */
+            --text-muted: #9ca3af; /* Szary */
             --border-subtle: rgba(255, 255, 255, 0.08);
-            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
@@ -33,180 +31,121 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             overflow-x: hidden;
+            /* Subtelne światło w tle */
             background-image: 
-                radial-gradient(circle at 50% 0%, #2a303c 0%, transparent 60%),
-                radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 1) 0%, transparent 60%),
+                radial-gradient(circle at 85% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
             min-height: 100vh;
         }
 
-        /* --- HEADER & LOGO WOW --- */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
             background: rgba(28, 30, 36, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-subtle);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        /* Nowe logo graficzne CSS */
-        .logo-symbol {
-            width: 40px;
-            height: 40px;
-            position: relative;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .logo-symbol::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 60%;
-            background: var(--accent);
-            bottom: 0;
-            box-shadow: 0 0 10px var(--accent);
-        }
-        
-        .logo-symbol::after {
-            content: '';
-            position: absolute;
-            top: 25%;
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            transform: rotate(45deg);
-            box-shadow: 0 0 10px #fff;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #fff;
+        .logo {
+            font-size: 1.4rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            line-height: 1;
-        }
-        
-        .logo-text span {
-            display: block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.65rem;
-            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 3px;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* --- NAVBAR & BUTTONS --- */
+        .logo span {
+            color: var(--accent);
+        }
+
         .contact-bar {
             display: flex;
             gap: 25px;
             align-items: center;
-        }
-
-        .contact-link {
-            color: var(--text-muted);
-            text-decoration: none;
             font-size: 0.9rem;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
-        .contact-link:hover { color: var(--accent); }
 
-        .btn-report {
+        .contact-item {
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+        .contact-item:hover { color: var(--accent); }
+
+        .btn-gold {
             padding: 10px 24px;
             background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
             border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.75rem;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .btn-report:hover {
+        .btn-gold:hover {
             background: var(--accent);
             color: var(--bg-body);
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* --- HERO --- */
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 100px 20px 60px;
+            padding: 90px 20px 70px;
             max-width: 900px;
             margin: 0 auto;
-            animation: fadeIn 1s ease-out;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            line-height: 1.1;
+            font-size: 3.8rem;
+            line-height: 1.2;
             margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff, #aeb5c0);
+            background: linear-gradient(to right, #fff, #9ca3af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 300;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* --- PREMIUM CARD --- */
+        /* Recommended Section */
         .recommended-section {
             max-width: 1200px;
             margin: 0 auto 80px;
             padding: 0 20px;
-            position: relative;
         }
 
         .card-premium {
-            background: linear-gradient(180deg, rgba(42,45,54,0.6) 0%, rgba(30,32,38,0.8) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 20px;
+            background: linear-gradient(145deg, #2a2d36, #22252c);
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Złota ramka */
+            border-radius: 16px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr 1fr;
             overflow: hidden;
-            box-shadow: 0 0 60px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.5);
             position: relative;
-            z-index: 1;
-        }
-
-        .card-premium::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
 
         .premium-content {
@@ -217,135 +156,104 @@
         }
 
         .badge-premium {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(212, 175, 55, 0.15);
+            background: rgba(212, 175, 55, 0.1);
             color: var(--accent);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 8px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 25px;
             align-self: flex-start;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            margin-bottom: 20px;
         }
 
         .premium-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: #fff;
+            font-size: 3rem;
+            color: var(--text-main);
             margin-bottom: 10px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .location-highlight {
+            color: var(--accent);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .premium-desc {
-            color: #ccc;
-            line-height: 1.7;
+            color: var(--text-muted);
+            line-height: 1.6;
             margin-bottom: 30px;
-            font-size: 1.05rem;
+            font-weight: 300;
         }
 
         .details-list {
             list-style: none;
             border-top: 1px solid var(--border-subtle);
             padding-top: 25px;
-            display: grid;
-            gap: 15px;
         }
 
         .details-list li {
-            color: #e2e4e9;
+            margin-bottom: 12px;
+            color: #d1d5db;
             display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.05rem;
-        }
-        
-        .icon-gold { color: var(--accent); filter: drop-shadow(0 0 5px var(--accent-glow)); }
-
-        .btn-visit {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 16px 40px;
-            background: var(--accent-gradient);
-            color: #1c1e24;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .btn-visit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
-            filter: brightness(1.1);
+            gap: 12px;
         }
 
         .premium-visual {
-            background: #111;
+            background: linear-gradient(135deg, #1e2025, #111);
             position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .visual-placeholder {
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #2c3039 0%, #000 100%);
+        /* Abstrakcyjny placeholder zamiast zdjęcia */
+        .placeholder-art {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
             position: relative;
+            overflow: hidden;
         }
-        .visual-placeholder::after {
-            content: 'My Way';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: rgba(255,255,255,0.03);
-            font-style: italic;
-            white-space: nowrap;
-        }
-
-        /* --- CATALOG GRID --- */
-        .section-separator {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        .section-separator span {
-            background: var(--bg-body);
-            padding: 0 20px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            position: relative;
-            z-index: 2;
-        }
-        .section-separator::before {
+        .placeholder-art::before {
             content: '';
             position: absolute;
-            top: 50%; left: 10%; right: 10%;
-            height: 1px;
-            background: var(--border-subtle);
-            z-index: 1;
+            top: -20%; right: -20%;
+            width: 80%; height: 80%;
+            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .placeholder-text {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: rgba(255,255,255,0.05);
+            font-style: italic;
+        }
+
+        /* Catalog Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto 100px;
             padding: 0 20px;
@@ -354,136 +262,86 @@
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 30px;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
+            transition: all 0.4s ease;
             position: relative;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: var(--bg-card-hover);
             border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 15px 40px -5px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .tag-region {
+        .tag-voivodeship {
             font-size: 0.65rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid var(--border-subtle);
-            padding: 6px 12px;
-            border-radius: 50px;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
 
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .card-info {
-            flex-grow: 1;
+            color: #f1f5f9;
         }
 
         .info-row {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 8px;
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .info-row span {
+            color: var(--accent); /* Ikona/punktor */
         }
 
-        /* Przycisk na dole karty */
-        .btn-card {
-            margin-top: 25px;
-            padding: 12px 0;
-            width: 100%;
-            background: transparent;
-            border: 1px solid var(--border-subtle);
-            color: var(--text-main);
-            text-align: center;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            display: block;
-        }
-
-        .btn-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            transition: 0.5s;
-        }
-
-        .card:hover .btn-card {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        .card:hover .btn-card::before {
-            left: 100%;
-        }
-
-        /* --- MODAL / POPUP --- */
+        /* Modal */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
+            inset: 0;
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(8px);
-            z-index: 2000; /* Bardzo wysoki Z-Index */
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            pointer-events: none;
+            transition: 0.3s;
+            z-index: 1000;
         }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-box {
+        .modal {
             background: #252830;
-            border: 1px solid var(--accent);
+            border: 1px solid var(--border-subtle);
             padding: 40px;
-            border-radius: 16px;
+            border-radius: 12px;
             width: 90%;
-            max-width: 500px;
-            position: relative;
-            transform: scale(0.9);
-            transition: 0.3s ease;
-            box-shadow: 0 0 50px rgba(0,0,0,0.6);
+            max-width: 450px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: 0.3s;
         }
+        .modal-overlay.active .modal { transform: scale(1); }
 
-        .modal-overlay.active .modal-box {
-            transform: scale(1);
-        }
-
-        .close-modal {
+        .modal h2 { margin-bottom: 10px; color: var(--text-main); }
+        
+        .close-btn {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -492,291 +350,220 @@
             color: var(--text-muted);
             font-size: 1.5rem;
             cursor: pointer;
-            transition: 0.2s;
         }
-        .close-modal:hover { color: #fff; }
+        .close-btn:hover { color: var(--text-main); }
 
-        .modal-box h2 {
-            font-family: 'Playfair Display', serif;
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 2rem;
-        }
-
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        
         .form-group label {
             display: block;
-            color: var(--accent);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
         .form-group input {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: #1c1e24;
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            color: #fff;
+            border-radius: 4px;
+            color: var(--text-main);
             outline: none;
-            transition: 0.3s;
         }
         .form-group input:focus { border-color: var(--accent); }
 
-        .btn-submit {
+        .submit-btn {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             background: var(--accent);
             color: #1c1e24;
-            border: none;
-            border-radius: 6px;
             font-weight: 700;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            text-transform: uppercase;
+            margin-top: 10px;
             transition: 0.3s;
         }
-        .btn-submit:hover { background: #fff; }
+        .submit-btn:hover { background: #bfa140; }
 
-        /* --- FOOTER --- */
         footer {
-            background: #15171b;
-            padding: 60px 20px;
             text-align: center;
+            padding: 50px;
             border-top: 1px solid var(--border-subtle);
-        }
-        
-        footer p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
-        footer strong { color: #fff; }
-
-        /* Animation Keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: #1a1c22;
         }
 
         @media (max-width: 768px) {
             .card-premium { grid-template-columns: 1fr; }
-            .premium-visual { min-height: 250px; order: -1; }
-            header { flex-direction: column; gap: 20px; }
             .hero h1 { font-size: 2.5rem; }
+            header { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo-container">
-            <div class="logo-symbol"></div>
-            <div class="logo-text">
-                Katalog
-                <span>Ośrodków</span>
-            </div>
-        </a>
-        
+        <div class="logo">Katalog <span>Ośrodków</span></div>
         <div class="contact-bar">
-            <a href="mailto:kontakt@osrodek-myway.pl" class="contact-link">kontakt@osrodek-myway.pl</a>
-            <button class="btn-report" id="btnOpenModal">+ Zgłoś ośrodek</button>
+            <div class="contact-item">731 395 295</div>
+            <div class="contact-item">kontakt@osrodek-myway.pl</div>
+            <button class="btn-gold" onclick="openModal()">+ Zgłoś ośrodek</button>
         </div>
     </header>
 
     <section class="hero">
         <h1>Wybierz swoje miejsce</h1>
-        <p>Prestiżowa selekcja prywatnych ośrodków terapii uzależnień w Polsce. <br>Znajdź przestrzeń, która pozwoli Ci odzyskać kontrolę.</p>
+        <p>Ekskluzywna baza prywatnych ośrodków terapii. <br>Znajdź przestrzeń, która pozwoli Ci zacząć od nowa.</p>
     </section>
 
     <section class="recommended-section">
         <div class="card-premium">
             <div class="premium-content">
-                <div class="badge-premium">
-                    <span class="icon-gold">★</span> Rekomendacja Ekspertów
-                </div>
+                <div class="badge-premium">Rekomendacja</div>
                 <h2>My Way</h2>
-                <div class="info-row" style="color: var(--accent); font-size: 1.1rem; margin-bottom: 20px;">
-                    <span class="icon-gold">📍</span> Kąpino k. Wejherowa (Pomorskie)
+                <div class="location-highlight">
+                    <span>📍</span> Kąpino k. Wejherowa
                 </div>
                 <p class="premium-desc">
-                    Ekskluzywny ośrodek łączący najwyższy standard hotelowy z profesjonalną terapią. Dyskrecja, indywidualne podejście i holistyczna odnowa w otoczeniu natury. Twój pierwszy krok w stronę nowej jakości życia.
+                    Prywatny ośrodek o najwyższym standardzie. Miejsce, gdzie profesjonalna terapia łączy się z dyskrecją i komfortem hotelowym. Idealne warunki do odzyskania równowagi w otoczeniu natury.
                 </p>
                 <ul class="details-list">
-                    <li><span class="icon-gold">🏢</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
-                    <li><span class="icon-gold">📞</span> +48 731 395 295</li>
-                    <li><span class="icon-gold">✉️</span> kontakt@osrodek-myway.pl</li>
+                    <li><span>🏢</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
+                    <li><span>📞</span> +48 731 395 295</li>
                 </ul>
-                <a href="https://osrodek-myway.pl" target="_blank" class="btn-visit">Odwiedź stronę ośrodka</a>
             </div>
             <div class="premium-visual">
-                <div class="visual-placeholder"></div>
+                <div class="placeholder-art">
+                    <div class="placeholder-text">My Way</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="section-separator">
-        <span>Pozostałe lokalizacje w Polsce</span>
-    </div>
+    <h3 class="section-title">Pozostałe Ośrodki w Polsce</h3>
 
     <section class="catalog-grid">
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Dolnośląskie</span></div>
-            <div class="card-info">
-                <h3>Nowa Droga</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Zielna 40, Wrocław</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 795 589 872</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Terapii+Nowa+Droga+Wrocław" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Dolnośląskie</span></div>
+            <h3>Nowa Droga</h3>
+            <div class="info-row"><span>📍</span> ul. Zielna 40, 51-313 Wrocław</div>
+            <div class="info-row"><span>📞</span> +48 795 589 872</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Kujawsko-Pom.</span></div>
-            <div class="card-info">
-                <h3>Ośrodek Spichlerz</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> Dyblin 1A, Dobrzyń n. Wisłą</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 884 916 008</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Terapii+Spichlerz+Dobrzyń" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Kujawsko-Pom.</span></div>
+            <h3>Ośrodek Spichlerz</h3>
+            <div class="info-row"><span>📍</span> Dyblin 1A, 87-610 Dobrzyń nad Wisłą</div>
+            <div class="info-row"><span>📞</span> +48 884 916 008</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Lubelskie</span></div>
-            <div class="card-info">
-                <h3>Zielona Klinika</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> Uniszowice 57G, Motycz</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 723 338 337</div>
-            </div>
-            <a href="https://www.google.com/search?q=Zielona+Klinika+Motycz" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Lubelskie</span></div>
+            <h3>Zielona Klinika</h3>
+            <div class="info-row"><span>📍</span> Uniszowice 57G, 21-030 Motycz</div>
+            <div class="info-row"><span>📞</span> +48 723 338 337</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Lubuskie</span></div>
-            <div class="card-info">
-                <h3>MCLU "Teresa Wagner"</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Poznańska 109, Międzyrzecz</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 95 742 87 56</div>
-            </div>
-            <a href="https://www.google.com/search?q=MCLU+Teresa+Wagner+Międzyrzecz" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Lubuskie</span></div>
+            <h3>MCLU "Teresa Wagner"</h3>
+            <div class="info-row"><span>📍</span> ul. Poznańska 109, 66-300 Międzyrzecz</div>
+            <div class="info-row"><span>📞</span> +48 95 742 87 56</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Łódzkie</span></div>
-            <div class="card-info">
-                <h3>Klinika Patromed</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Trębacka 38, Łódź</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 660 254 050</div>
-            </div>
-            <a href="https://www.google.com/search?q=Klinika+Patromed+Łódź" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Łódzkie</span></div>
+            <h3>Klinika Patromed</h3>
+            <div class="info-row"><span>📍</span> ul. Trębacka 38, 93-367 Łódź</div>
+            <div class="info-row"><span>📞</span> +48 660 254 050</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Małopolskie</span></div>
-            <div class="card-info">
-                <h3>TU i TERAZ</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Zakamycze 37A, Kraków</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 669 969 209</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+TU+i+TERAZ+Kraków" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Małopolskie</span></div>
+            <h3>TU i TERAZ</h3>
+            <div class="info-row"><span>📍</span> ul. Zakamycze 37A, 30-240 Kraków</div>
+            <div class="info-row"><span>📞</span> +48 669 969 209</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Mazowieckie</span></div>
-            <div class="card-info">
-                <h3>Vita Nova</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Szpitalna 16A, Marki</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 572 905 999</div>
-            </div>
-            <a href="https://www.google.com/search?q=Vita+Nova+Ośrodek+Marki" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Mazowieckie</span></div>
+            <h3>Vita Nova</h3>
+            <div class="info-row"><span>📍</span> ul. Szpitalna 16A, 05-270 Marki</div>
+            <div class="info-row"><span>📞</span> +48 572 905 999</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Opolskie</span></div>
-            <div class="card-info">
-                <h3>OPM-MED</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Jagiełły 8A, Opole</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 882 597 992</div>
-            </div>
-            <a href="https://www.google.com/search?q=OPM-MED+Opole" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Opolskie</span></div>
+            <h3>OPM-MED</h3>
+            <div class="info-row"><span>📍</span> ul. Jagiełły 8A, 45-920 Opole</div>
+            <div class="info-row"><span>📞</span> +48 882 597 992</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Podkarpackie</span></div>
-            <div class="card-info">
-                <h3>Ośrodek Iwonicz</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Piwarskiego 26, Iwonicz-Zdrój</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 517 060 303</div>
-            </div>
-            <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Iwonicz+Zdrój" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Podkarpackie</span></div>
+            <h3>Ośrodek w Iwoniczu-Zdroju</h3>
+            <div class="info-row"><span>📍</span> ul. Piwarskiego 26, 38-440 Iwonicz-Zdrój</div>
+            <div class="info-row"><span>📞</span> +48 517 060 303</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Podlaskie</span></div>
-            <div class="card-info">
-                <h3>Virtus</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Antoniuk Fabr. 10/1, Białystok</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 698 335 897</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Virtus+Białystok" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Podlaskie</span></div>
+            <h3>Virtus</h3>
+            <div class="info-row"><span>📍</span> ul. Antoniuk Fabryczny 10/1, Białystok</div>
+            <div class="info-row"><span>📞</span> +48 698 335 897</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Śląskie</span></div>
-            <div class="card-info">
-                <h3>Ośrodek ARKA</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Spacerowa 4, Wisła</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 783 218 321</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Arka+Wisła" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Śląskie</span></div>
+            <h3>Ośrodek ARKA</h3>
+            <div class="info-row"><span>📍</span> ul. Spacerowa 4, 43-460 Wisła</div>
+            <div class="info-row"><span>📞</span> +48 783 218 321</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Świętokrzyskie</span></div>
-            <div class="card-info">
-                <h3>NASZ DOM</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Silniczna 11, Dąbrowa</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 698 323 698</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Nasz+Dom+Dąbrowa+Kielce" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Świętokrzyskie</span></div>
+            <h3>NASZ DOM</h3>
+            <div class="info-row"><span>📍</span> ul. Silniczna 11, 26-001 Dąbrowa</div>
+            <div class="info-row"><span>📞</span> +48 698 323 698</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Warm-Maz.</span></div>
-            <div class="card-info">
-                <h3>In Puris</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> Huta Żuławska 10A, Milejowo</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 602 330 352</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+In+Puris+Milejowo" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Warm-Maz.</span></div>
+            <h3>In Puris</h3>
+            <div class="info-row"><span>📍</span> Huta Żuławska 10A, 82-316 Milejowo</div>
+            <div class="info-row"><span>📞</span> +48 602 330 352</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Wielkopolskie</span></div>
-            <div class="card-info">
-                <h3>AGNUS</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> Aleja Stachury 2, Poznań</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 533 221 555</div>
-            </div>
-            <a href="https://www.google.com/search?q=Ośrodek+Agnus+Poznań" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Wielkopolskie</span></div>
+            <h3>AGNUS</h3>
+            <div class="info-row"><span>📍</span> Aleja Stachury 2, 60-461 Poznań</div>
+            <div class="info-row"><span>📞</span> +48 533 221 555</div>
         </div>
 
         <div class="card">
-            <div class="card-header"><span class="tag-region">Zachodniopom.</span></div>
-            <div class="card-info">
-                <h3>Centrum ANON</h3>
-                <div class="info-row"><span class="icon-gold">📍</span> ul. Pocztowa 13, Goleniów</div>
-                <div class="info-row"><span class="icon-gold">📞</span> +48 91 407 18 10</div>
-            </div>
-            <a href="https://www.google.com/search?q=Centrum+Anon+Goleniów" target="_blank" class="btn-card">Zobacz więcej</a>
+            <div class="card-header"><span class="tag-voivodeship">Zachodniopom.</span></div>
+            <h3>Centrum ANON</h3>
+            <div class="info-row"><span>📍</span> ul. Pocztowa 13, 72-100 Goleniów</div>
+            <div class="info-row"><span>📞</span> +48 91 407 18 10</div>
         </div>
 
     </section>
 
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-box">
-            <button class="close-modal" id="btnCloseModal">&times;</button>
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="close-btn" onclick="toggleModal()">&times;</button>
             <h2>Zgłoś ośrodek</h2>
-            <p style="color: #9ca3af; margin-bottom: 25px;">Chcesz dołączyć do katalogu? Wypełnij formularz.</p>
-            <form id="submissionForm">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Wypełnij dane, aby dodać placówkę.</p>
+            <form id="centerForm">
                 <div class="form-group">
-                    <label>Nazwa Ośrodka</label>
+                    <label>Nazwa</label>
                     <input type="text" required>
                 </div>
                 <div class="form-group">
@@ -784,64 +571,43 @@
                     <input type="text" required>
                 </div>
                 <div class="form-group">
+                    <label>Adres</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
                     <label>Telefon</label>
                     <input type="text" required>
                 </div>
-                <button type="submit" class="btn-submit">Wyślij Zgłoszenie</button>
+                <button type="submit" class="submit-btn">Wyślij zgłoszenie</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 <strong>Katalog Ośrodków</strong>. Design by MyWay.</p>
-        <p>kontakt@osrodek-myway.pl | +48 731 395 295</p>
+        <p>&copy; 2024 Katalog Ośrodków. Wszelkie prawa zastrzeżone.</p>
+        <p style="margin-top: 10px; color: var(--accent);">kontakt@osrodek-myway.pl</p>
     </footer>
 
     <script>
-        // Pobieramy elementy
-        const modal = document.getElementById('modalOverlay');
-        const btnOpen = document.getElementById('btnOpenModal');
-        const btnClose = document.getElementById('btnCloseModal');
-        const form = document.getElementById('submissionForm');
-
-        // Funkcje
-        function openModal() {
-            modal.classList.add('active');
+        function toggleModal() {
+            document.getElementById('modal').classList.toggle('active');
         }
 
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        // Event Listeners
-        btnOpen.addEventListener('click', openModal);
-        btnClose.addEventListener('click', closeModal);
-        
-        // Kliknięcie w tło zamyka modal
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) toggleModal();
         });
 
-        // Obsługa formularza (symulacja)
-        form.addEventListener('submit', (e) => {
+        document.getElementById('centerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-
-            btn.innerText = "Wysyłanie...";
-            btn.style.background = "#22c55e"; // Zielony sukces
-            btn.style.color = "#fff";
-
+            const btn = this.querySelector('button');
+            const original = btn.innerText;
+            btn.innerText = "Wysłano!";
+            btn.style.background = "#4ade80"; // Sukces
             setTimeout(() => {
-                alert("Dziękujemy! Twoje zgłoszenie zostało przyjęte.");
-                closeModal();
-                form.reset();
-                // Reset stylów przycisku
-                btn.innerText = originalText;
+                toggleModal();
+                btn.innerText = original;
                 btn.style.background = "var(--accent)";
-                btn.style.color = "#1c1e24";
+                this.reset();
             }, 1500);
         });
     </script>
