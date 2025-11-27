@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Prywatne Ośrodki Leczenia Uzależnień - Katalog Premium 2025 | My Way</title>
-    <meta name="description" content="Ekskluzywny katalog prywatnych ośrodków leczenia uzależnień w Polsce. Rekomendacja: Ośrodek My Way.">
+    <meta name="description" content="Ranking prywatnych ośrodków leczenia uzależnień w Polsce. Sprawdź opinie, ceny i metody terapii. Rekomendacja ekspertów: Ośrodek My Way (Kąpino).">
+    <meta name="keywords" content="ośrodek terapii uzależnień, prywatny odwyk alkoholowy, leczenie narkomanii, ośrodek zamknięty cennik, My Way opinie, najlepsze ośrodki w Polsce">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Paleta Dark Premium */
-            --bg-body: #0f1115; /* Bardzo ciemny grafit */
-            --bg-card: #181b21;
-            --gold: #d4af37;
-            --gold-dim: #8a7338;
-            --gold-glow: rgba(212, 175, 55, 0.15);
-            --text-main: #e2e2e2;
+            /* Głęboka paleta Dark Luxury */
+            --bg-body: #0a0b0e;
+            --bg-card: #13151a;
+            
+            /* Złoto w wersji Gradient */
+            --gold-start: #d4af37;
+            --gold-end: #aa8420;
+            --gold-text: #e5c567;
+            
+            --text-main: #f0f0f0;
             --text-muted: #9ca3af;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-gold: rgba(212, 175, 55, 0.3);
-            --shadow-card: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-gold: rgba(212, 175, 55, 0.4);
+            
+            /* Efekty świetlne */
+            --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.08);
+            --glass: rgba(19, 21, 26, 0.8);
         }
 
         * {
@@ -38,32 +46,35 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             overflow-x: hidden;
-            /* Subtelne, luksusowe tło */
+            /* Tło z teksturą światła */
             background-image: 
-                radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(60, 70, 90, 0.2) 0%, transparent 40%);
             min-height: 100vh;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* --- Animacje --- */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Złoty tekst (Gradient Text) */
+        .gold-text {
+            background: linear-gradient(135deg, #fce38a, #d4af37, #aa8420);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
 
         /* --- HEADER --- */
@@ -71,9 +82,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 5%;
-            background: rgba(15, 17, 21, 0.9);
-            backdrop-filter: blur(15px);
+            padding: 20px 5%;
+            background: rgba(10, 11, 14, 0.8);
+            backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -89,28 +100,24 @@
         }
 
         .logo-symbol {
-            width: 32px;
-            height: 32px;
-            border: 1px solid var(--gold);
-            transform: rotate(45deg);
-            position: relative;
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-        .logo-symbol::after {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            background: var(--gold);
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .logo-text {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            line-height: 1;
         }
         .logo-text span {
-            color: var(--gold);
+            display: block;
+            font-size: 0.7rem;
+            color: var(--gold-start);
+            letter-spacing: 4px;
         }
 
         .contact-bar {
@@ -124,80 +131,86 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             transition: 0.3s;
+            letter-spacing: 0.5px;
         }
-        .contact-link:hover { color: var(--gold); }
+        .contact-link:hover { color: var(--gold-text); }
 
         .btn-gold-outline {
-            padding: 10px 24px;
+            padding: 12px 28px;
             background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
+            border: 1px solid var(--gold-start);
+            color: var(--gold-text);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
+        
         .btn-gold-outline:hover {
-            background: var(--gold);
-            color: var(--bg-body);
-            box-shadow: 0 0 20px var(--gold-glow);
+            background: var(--gold-start);
+            color: #000;
+            box-shadow: 0 0 30px var(--gold-start);
         }
 
-        /* --- HERO & SEARCH --- */
+        /* --- HERO --- */
         .hero {
             text-align: center;
-            padding: 100px 20px 60px;
+            padding: 120px 20px 80px;
             max-width: 900px;
             margin: 0 auto;
-            animation: fadeUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, #9ca3af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            text-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 50px;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* WYSZUKIWARKA */
         .search-container {
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto 50px;
+            position: relative;
         }
         
         .search-box {
-            position: relative;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.05);
             border: 1px solid var(--border-subtle);
-            border-radius: 4px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            padding: 5px;
-            transition: 0.3s;
+            padding: 8px 25px;
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
         }
         
         .search-box:focus-within {
-            border-color: var(--gold);
-            background: rgba(0,0,0,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--gold-start);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            background: rgba(0,0,0,0.3);
+            transform: scale(1.02);
         }
 
         .search-icon {
-            padding: 0 15px;
             font-size: 1.2rem;
-            color: var(--gold);
+            color: var(--gold-text);
+            margin-right: 15px;
         }
 
         .search-input {
@@ -209,8 +222,9 @@
             outline: none;
             font-size: 1rem;
         }
+        .search-input::placeholder { color: rgba(255,255,255,0.3); }
 
-        /* --- PREMIUM CARD --- */
+        /* --- PREMIUM CARD (MY WAY) --- */
         .recommended-section {
             max-width: 1200px;
             margin: 0 auto 100px;
@@ -218,50 +232,64 @@
         }
 
         .card-premium {
-            background: var(--bg-card);
+            background: linear-gradient(145deg, #16181e, #0e0f12);
             border: 1px solid var(--border-gold);
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            box-shadow: 0 0 50px rgba(0,0,0,0.3);
+            grid-template-columns: 1.1fr 1fr;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
             position: relative;
+            overflow: hidden;
         }
+
+        /* Efekt błysku na karcie premium */
+        .card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-start), transparent);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
         .premium-content {
             padding: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            z-index: 2;
         }
 
         .badge-premium {
-            color: var(--gold);
-            font-size: 0.75rem;
+            background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+            color: #000;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--gold);
+            letter-spacing: 2px;
             align-self: flex-start;
-            padding-bottom: 5px;
+            margin-bottom: 25px;
         }
 
         .premium-content h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 10px;
             color: #fff;
         }
 
         .location-main {
-            color: var(--gold);
+            color: var(--gold-text);
             font-style: italic;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
         }
 
         .premium-desc {
             color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 30px;
+            line-height: 1.8;
+            margin-bottom: 35px;
             font-weight: 300;
         }
 
@@ -269,32 +297,35 @@
             list-style: none;
             margin-bottom: 40px;
             border-top: 1px solid var(--border-subtle);
-            padding-top: 20px;
+            padding-top: 25px;
         }
 
         .details-list li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             gap: 15px;
-            color: #d1d5db;
+            color: #e2e2e2;
+            font-size: 1.05rem;
         }
-        .icon-gold { color: var(--gold); }
+        .icon-gold { color: var(--gold-start); text-shadow: 0 0 10px var(--gold-glow); }
 
         .btn-premium {
-            background: var(--gold);
-            color: #0f1115;
+            background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+            color: #0b0d10;
             text-decoration: none;
-            padding: 15px 40px;
-            font-weight: 600;
+            padding: 16px 45px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-align: center;
             align-self: flex-start;
             transition: 0.3s;
+            border: none;
         }
         .btn-premium:hover {
-            background: #fff;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--gold-glow);
+            filter: brightness(1.1);
         }
 
         .premium-visual {
@@ -304,87 +335,98 @@
             background-position: center;
             min-height: 500px;
             position: relative;
-        }
-        
-        .premium-visual::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.2); /* Lekkie przyciemnienie zdjęcia */
+            box-shadow: inset 50px 0 100px #0a0b0e; /* Płynne przejście */
         }
 
         /* --- CATALOG GRID --- */
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 1px solid var(--border-subtle);
             max-width: 1200px;
             margin: 0 auto 60px;
-            padding-bottom: 20px;
+            position: relative;
         }
         
         .section-header h3 {
-            color: var(--text-muted);
+            color: var(--text-main);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.2rem;
+            letter-spacing: 3px;
+            font-size: 1.5rem;
+            display: inline-block;
+            background: var(--bg-body);
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; width: 100%; height: 1px;
+            background: var(--border-subtle);
+            z-index: 1;
         }
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
             max-width: 1200px;
-            margin: 0 auto 100px;
+            margin: 0 auto 120px;
             padding: 0 20px;
         }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            padding: 30px;
-            transition: 0.4s ease;
+            padding: 35px;
+            transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
             display: flex;
             flex-direction: column;
             position: relative;
+            border-radius: 4px;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-            box-shadow: var(--shadow-card);
+            transform: translateY(-10px);
+            border-color: var(--gold-start);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .card:hover .tag-voivodeship {
+            background: var(--gold-start);
+            color: #000;
         }
 
         .tag-voivodeship {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             font-size: 0.65rem;
-            color: var(--gold);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid var(--border-subtle);
-            padding: 4px 8px;
+            padding: 5px 10px;
+            transition: 0.3s;
         }
 
         .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             color: #fff;
             margin-top: 10px;
         }
 
         .card-info {
             display: flex;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 12px;
+            margin-bottom: 10px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .card-footer {
             margin-top: auto;
-            padding-top: 20px;
+            padding-top: 25px;
             border-top: 1px solid var(--border-subtle);
         }
 
@@ -393,69 +435,84 @@
             text-align: center;
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px;
+            letter-spacing: 1.5px;
+            padding: 12px;
             border: 1px solid var(--border-subtle);
             transition: 0.3s;
+            font-weight: 600;
         }
         .btn-card:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--gold-start);
+            color: var(--gold-text);
+            background: rgba(212, 175, 55, 0.08);
         }
 
-        /* --- CONTENT & FAQ --- */
-        .content-block {
+        /* --- SEO CONTENT & FAQ --- */
+        .content-container {
             max-width: 900px;
             margin: 0 auto 100px;
             padding: 0 20px;
         }
 
-        .seo-text {
-            margin-bottom: 60px;
-            border-left: 2px solid var(--gold);
-            padding-left: 30px;
+        .seo-section {
+            margin-bottom: 80px;
         }
-        .seo-text h2 { color: #fff; margin-bottom: 20px; font-size: 1.8rem; }
-        .seo-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 15px; }
+        
+        .seo-title {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .seo-title span { color: var(--gold-text); }
 
+        .seo-text-block {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        .seo-text-block strong { color: #e2e2e2; }
+
+        /* FAQ Styling */
         .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            margin-bottom: 10px;
+            background: #13151a;
+            border-bottom: 1px solid var(--border-subtle);
             transition: 0.3s;
         }
-        .faq-item:hover { border-color: rgba(255,255,255,0.2); }
+        .faq-item:first-of-type { border-top: 1px solid var(--border-subtle); }
+        .faq-item:hover { background: #1a1d24; }
 
         .faq-item summary {
-            padding: 20px;
+            padding: 25px;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #e2e2e2;
+            color: #f0f0f0;
             font-weight: 500;
+            font-size: 1.1rem;
         }
         
-        .faq-item summary::after { content: '+'; color: var(--gold); font-size: 1.5rem; font-weight: 300; }
-        .faq-item[open] summary::after { content: '-'; }
+        .faq-item summary::after { content: '+'; color: var(--gold-start); font-size: 1.5rem; transition: 0.3s; }
+        .faq-item[open] summary::after { content: '−'; transform: rotate(180deg); color: #fff; }
 
         .faq-item p {
-            padding: 0 20px 20px;
+            padding: 0 25px 30px;
             color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* --- MODAL --- */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(8px);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -468,45 +525,48 @@
 
         .modal-box {
             background: #181b21;
-            padding: 40px;
+            padding: 50px;
             width: 90%;
-            max-width: 450px;
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 50px rgba(0,0,0,0.7);
-            transform: scale(0.95);
-            transition: 0.3s;
+            max-width: 500px;
+            border: 1px solid var(--gold-start);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+            transform: translateY(30px);
+            transition: 0.4s;
             position: relative;
         }
-        .modal-overlay.active .modal-box { transform: scale(1); }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
 
-        .modal-box h2 { color: #fff; margin-bottom: 10px; }
-        .modal-box p { color: var(--text-muted); margin-bottom: 25px; }
+        .modal-box h2 { color: #fff; margin-bottom: 10px; font-size: 2rem; }
+        .modal-box p { color: var(--text-muted); margin-bottom: 30px; }
 
-        .input-row { margin-bottom: 15px; }
-        .input-row label { display: block; color: var(--gold); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; }
-        .input-row input { width: 100%; background: #0f1115; border: 1px solid var(--border-subtle); padding: 12px; color: #fff; outline: none; transition: 0.3s; }
-        .input-row input:focus { border-color: var(--gold); }
+        .input-row { margin-bottom: 20px; }
+        .input-row label { display: block; color: var(--gold-text); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .input-row input { width: 100%; background: #0a0b0e; border: 1px solid var(--border-subtle); padding: 15px; color: #fff; outline: none; transition: 0.3s; }
+        .input-row input:focus { border-color: var(--gold-start); box-shadow: 0 0 15px rgba(212,175,55,0.1); }
 
-        .btn-submit { width: 100%; background: var(--gold); color: #000; padding: 12px; border: none; font-weight: 600; cursor: pointer; margin-top: 10px; }
-        .btn-submit:hover { background: #fff; }
+        .btn-submit { width: 100%; background: linear-gradient(90deg, var(--gold-start), var(--gold-end)); color: #000; padding: 15px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-submit:hover { filter: brightness(1.1); }
 
-        .close-modal { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .close-modal { position: absolute; top: 20px; right: 25px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.5; transition: 0.3s; }
+        .close-modal:hover { opacity: 1; color: var(--gold-start); }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             border-top: 1px solid var(--border-subtle);
             color: var(--text-muted);
-            font-size: 0.85rem;
-            background: #0b0d10;
+            font-size: 0.9rem;
+            background: #050608;
         }
+        footer strong { color: #fff; }
 
         /* Responsive */
         @media(max-width: 900px) {
             .card-premium { grid-template-columns: 1fr; }
             .premium-visual { min-height: 250px; order: -1; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .premium-content h2 { font-size: 2.5rem; }
             header { flex-direction: column; gap: 20px; }
         }
     </style>
@@ -526,12 +586,12 @@
     </header>
 
     <section class="hero reveal">
-        <h1>Wybierz swoje miejsce</h1>
-        <p>Ekskluzywna baza prywatnych ośrodków terapii.<br>Znajdź przestrzeń, która pozwoli Ci zacząć od nowa.</p>
+        <h1>Wybierz swoje <span class="gold-text">miejsce</span></h1>
+        <p>Ekskluzywna baza prywatnych ośrodków terapii w Polsce.<br>Odkryj przestrzeń, która pozwoli Ci zacząć od nowa w atmosferze pełnej dyskrecji.</p>
         
         <div class="search-container">
             <div class="search-box">
-                <span class="search-icon">⚲</span>
+                <span class="search-icon">🔍</span>
                 <input type="text" class="search-input" id="searchInput" placeholder="Szukaj ośrodka, miasta lub województwa...">
             </div>
         </div>
@@ -544,7 +604,7 @@
                 <h2>My Way</h2>
                 <div class="location-main">Kąpino k. Gdyni</div>
                 <p class="premium-desc">
-                    Prywatny ośrodek o najwyższym standardzie. Miejsce, gdzie profesjonalna terapia łączy się z dyskrecją i komfortem hotelowym. Idealne warunki do odzyskania równowagi w otoczeniu natury.
+                    Prywatny ośrodek o najwyższym standardzie, stworzony dla osób wymagających. Miejsce, gdzie profesjonalna terapia uzależnień łączy się z absolutną dyskrecją i komfortem 5-gwiazdkowego hotelu. Idealne warunki do odzyskania równowagi.
                 </p>
                 <ul class="details-list">
                     <li><span class="icon-gold">📍</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
@@ -561,7 +621,6 @@
     </div>
 
     <section class="catalog-grid" id="grid">
-        
         <div class="card reveal">
             <div class="tag-voivodeship">Dolnośląskie</div>
             <h3>Nowa Droga</h3>
@@ -683,42 +742,45 @@
         </div>
     </section>
 
-    <div class="content-block reveal">
-        <div class="seo-text">
-            <h2>Dlaczego warto wybrać prywatny ośrodek terapii?</h2>
-            <p>
-                Wybór odpowiedniego miejsca leczenia to pierwszy i najważniejszy krok na drodze do zdrowienia. Prywatne ośrodki leczenia uzależnień w Polsce oferują standardy, które często przewyższają placówki publiczne. Kluczowe zalety to przede wszystkim <strong>pełna anonimowość</strong> i dyskrecja, co jest priorytetem dla wielu pacjentów oraz ich rodzin.
-            </p>
-            <p>
-                Dodatkowo, ośrodki prywatne takie jak <strong>My Way w Kąpinie</strong> zapewniają intensywną, zindywidualizowaną terapię. Mniejsze grupy terapeutyczne, codzienna dostępność specjalistów oraz komfortowe warunki pobytu (przypominające standard hotelowy) znacząco wpływają na efektywność procesu terapeutycznego. Otoczenie natury, z dala od miejskiego zgiełku, pozwala na głębokie wyciszenie i skupienie się na pracy nad sobą.
-            </p>
-        </div>
+    <div class="content-container reveal">
+        
+        <section class="seo-section">
+            <h2 class="seo-title">Standardy leczenia w <span>Polsce</span></h2>
+            
+            <div class="seo-text-block">
+                <p>Wybór prywatnego ośrodka terapii uzależnień to decyzja, która otwiera drzwi do nowego życia. W przeciwieństwie do placówek publicznych, prywatne kliniki takie jak <strong>My Way</strong> oferują natychmiastową dostępność, bez kolejek i zbędnych formalności. Kluczowym aspektem jest <strong>holistyczne podejście</strong> – leczenie nie dotyczy tylko ciała (detoks), ale przede wszystkim psychiki i ducha.</p>
+            </div>
+            
+            <div class="seo-text-block">
+                <p>Nowoczesna terapia uzależnień opiera się na intensywnej pracy w małych grupach oraz sesjach indywidualnych z certyfikowanymi terapeutami. Prywatne ośrodki zapewniają warunki sprzyjające wyciszeniu: komfortowe pokoje, strefy relaksu i otoczenie natury. Ważnym elementem jest także <strong>opieka poszpitalna</strong> (aftercare), która pomaga utrzymać trzeźwość po opuszczeniu ośrodka.</p>
+            </div>
+        </section>
 
-        <h2 style="color: #fff; margin-bottom: 25px;">Najczęściej Zadawane Pytania (FAQ)</h2>
+        <h2 style="color: #fff; margin-bottom: 30px; border-top: 1px solid var(--border-subtle); padding-top: 50px;">Najczęściej Zadawane Pytania</h2>
         
         <details class="faq-item">
             <summary>Jak wygląda proces przyjęcia do ośrodka?</summary>
-            <p>Proces jest maksymalnie uproszczony. Wystarczy kontakt telefoniczny w celu ustalenia terminu. W większości prywatnych ośrodków nie jest wymagane skierowanie lekarskie. Podczas rozmowy wstępnej przeprowadzany jest krótki wywiad, aby dopasować odpowiednią formę pomocy.</p>
+            <p>Proces jest maksymalnie uproszczony i dyskretny. Wystarczy kontakt telefoniczny w celu ustalenia terminu. W większości prywatnych ośrodków nie jest wymagane skierowanie lekarskie. Decyzja o podjęciu leczenia jest dobrowolna.</p>
         </details>
 
         <details class="faq-item">
             <summary>Czy pobyt w ośrodku jest w pełni anonimowy?</summary>
-            <p>Tak, dyskrecja to podstawa działalności prywatnych placówek. Ośrodki nie mają obowiązku zgłaszania pacjentów do systemów centralnych, a dane osobowe są chronione najwyższymi procedurami bezpieczeństwa. Twój pracodawca ani otoczenie nie muszą wiedzieć o terapii.</p>
+            <p>Tak, anonimowość to nasz priorytet. Prywatne placówki nie mają obowiązku zgłaszania pacjentów do państwowych rejestrów. Twoje dane są chronione, a pobyt może być traktowany jako urlop wypoczynkowy.</p>
         </details>
 
         <details class="faq-item">
-            <summary>Ile trwa terapia stacjonarna?</summary>
-            <p>Standardowy turnus terapeutyczny trwa zazwyczaj od 4 do 8 tygodni. Jest to czas niezbędny do przerwania ciągu, detoksykacji organizmu oraz nabycia podstawowych umiejętności radzenia sobie z nałogiem. Długość pobytu może być jednak dostosowana indywidualnie do potrzeb pacjenta.</p>
+            <summary>Ile trwa skuteczna terapia stacjonarna?</summary>
+            <p>Rekomendowany czas trwania terapii podstawowej to zazwyczaj od 4 do 8 tygodni. Jest to okres niezbędny do przerwania ciągu, odtrucia organizmu (detoks) oraz nabycia narzędzi psychologicznych do radzenia sobie z głodem substancji.</p>
         </details>
 
         <details class="faq-item">
             <summary>Czy mogę korzystać z telefonu i laptopa?</summary>
-            <p>Zasady różnią się w zależności od ośrodka. W My Way dbamy o balans – kontakt ze światem jest możliwy, jednak zalecamy jego ograniczenie, aby w pełni skupić się na procesie terapeutycznym. Sprzęt elektroniczny jest zazwyczaj udostępniany w wyznaczonych godzinach.</p>
+            <p>W ośrodku My Way rozumiemy potrzeby zawodowe i rodzinne pacjentów. Dostęp do urządzeń elektronicznych jest możliwy, jednak zazwyczaj regulowany w określonych godzinach, aby nie zakłócał procesu terapeutycznego.</p>
         </details>
 
         <details class="faq-item">
             <summary>Jakie metody leczenia są stosowane?</summary>
-            <p>Wykorzystujemy sprawdzone, naukowo potwierdzone metody terapii uzależnień, w tym terapię poznawczo-behawioralną, warsztaty umiejętności, treningi asertywności oraz techniki relaksacyjne. Całość dopełnia opieka medyczna i farmakologiczna (w razie potrzeby).</p>
+            <p>Stosujemy metody o udowodnionej skuteczności, m.in. terapię poznawczo-behawioralną, dialog motywujący, treningi asertywności i radzenia sobie ze stresem. Program jest dostosowywany indywidualnie do historii i potrzeb każdego pacjenta.</p>
         </details>
     </div>
 
@@ -726,11 +788,11 @@
         <div class="modal-box">
             <button class="close-modal" onclick="closeModal()">&times;</button>
             <h2>Zgłoś ośrodek</h2>
-            <p>Dołącz do bazy najlepszych placówek.</p>
+            <p>Dołącz do bazy najlepszych placówek w Polsce.</p>
             <form id="addForm">
                 <div class="input-row"><label>Nazwa Ośrodka</label><input type="text" required></div>
-                <div class="input-row"><label>Lokalizacja</label><input type="text" required></div>
-                <div class="input-row"><label>Telefon</label><input type="text" required></div>
+                <div class="input-row"><label>Województwo / Miasto</label><input type="text" required></div>
+                <div class="input-row"><label>Telefon Kontaktowy</label><input type="text" required></div>
                 <button type="submit" class="btn-submit">Wyślij Zgłoszenie</button>
             </form>
         </div>
@@ -738,7 +800,9 @@
 
     <footer>
         <p>&copy; 2025 Katalog Ośrodków Premium. Wszystkie prawa zastrzeżone.</p>
-        <p style="margin-top: 10px; font-weight: 600; color: var(--gold);">kontakt@osrodek-myway.pl</p>
+        <p style="margin-top: 15px;">
+            <a href="mailto:kontakt@osrodek-myway.pl" style="color: var(--gold-start); text-decoration: none; font-weight: 600;">kontakt@osrodek-myway.pl</a>
+        </p>
     </footer>
 
     <script>
@@ -784,14 +848,15 @@
             e.preventDefault();
             const btn = form.querySelector('button');
             const originalText = btn.innerText;
-            btn.innerText = "Wysłano!";
+            btn.innerText = "Wysłano pomyślnie!";
             btn.style.background = "#4ade80";
+            btn.style.color = "#000";
             setTimeout(() => {
                 closeModal();
                 btn.innerText = originalText;
-                btn.style.background = "var(--gold)";
+                btn.style.background = "linear-gradient(90deg, var(--gold-start), var(--gold-end))";
                 form.reset();
-            }, 1500);
+            }, 2000);
         });
     </script>
 </body>
