@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Prywatne Ośrodki Leczenia Uzależnień - Katalog Premium 2025 | My Way</title>
-    <meta name="description" content="Ranking prywatnych ośrodków leczenia uzależnień w Polsce. Sprawdź opinie, ceny i metody terapii. Rekomendacja ekspertów: Ośrodek My Way (Kąpino).">
-    <meta name="keywords" content="ośrodek terapii uzależnień, prywatny odwyk alkoholowy, leczenie narkomanii, ośrodek zamknięty cennik, My Way opinie, najlepsze ośrodki w Polsce">
+    <meta name="description" content="Ranking prywatnych ośrodków leczenia uzależnień. Zrób test i dobierz ośrodek. Rekomendacja: Ośrodek My Way (Kąpino).">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +13,11 @@
     
     <style>
         :root {
-            /* Głęboka paleta Dark Luxury */
+            /* Paleta Dark Luxury */
             --bg-body: #0a0b0e;
             --bg-card: #13151a;
             
-            /* Złoto w wersji Gradient */
+            /* Złoto */
             --gold-start: #d4af37;
             --gold-end: #aa8420;
             --gold-text: #e5c567;
@@ -26,12 +25,12 @@
             --text-main: #f0f0f0;
             --text-muted: #9ca3af;
             
-            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-subtle: rgba(255, 255, 255, 0.08);
             --border-gold: rgba(212, 175, 55, 0.4);
             
-            /* Efekty świetlne */
-            --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.08);
-            --glass: rgba(19, 21, 26, 0.8);
+            /* UI Elements */
+            --glass: rgba(19, 21, 26, 0.95);
+            --radius: 8px;
         }
 
         * {
@@ -46,35 +45,31 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             overflow-x: hidden;
-            /* Tło z teksturą światła */
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(60, 70, 90, 0.2) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+                radial-gradient(circle at 80% 90%, rgba(40, 50, 60, 0.3) 0%, transparent 40%);
             min-height: 100vh;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
         }
 
-        /* --- Animacje --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Złoty tekst (Gradient Text) */
         .gold-text {
             background: linear-gradient(135deg, #fce38a, #d4af37, #aa8420);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* --- HEADER --- */
@@ -83,8 +78,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(10, 11, 14, 0.8);
-            backdrop-filter: blur(20px);
+            background: rgba(10, 11, 14, 0.9);
+            backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -104,91 +99,70 @@
             height: 36px;
             background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        .logo-text {
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1;
-        }
-        .logo-text span {
-            display: block;
-            font-size: 0.7rem;
-            color: var(--gold-start);
-            letter-spacing: 4px;
-        }
+        .logo-text { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+        .logo-text span { display: block; font-size: 0.7rem; color: var(--gold-start); letter-spacing: 4px; }
 
-        .contact-bar {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .contact-link {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            transition: 0.3s;
-            letter-spacing: 0.5px;
-        }
+        .contact-bar { display: flex; gap: 25px; align-items: center; }
+        .contact-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: 0.3s; }
         .contact-link:hover { color: var(--gold-text); }
 
         .btn-gold-outline {
-            padding: 12px 28px;
+            padding: 10px 24px;
             background: transparent;
             border: 1px solid var(--gold-start);
             color: var(--gold-text);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
             font-size: 0.75rem;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .btn-gold-outline:hover {
-            background: var(--gold-start);
-            color: #000;
-            box-shadow: 0 0 30px var(--gold-start);
-        }
+        .btn-gold-outline:hover { background: var(--gold-start); color: #000; box-shadow: 0 0 20px rgba(212,175,55,0.2); }
 
-        /* --- HERO --- */
+        /* --- HERO & CONCIERGE --- */
         .hero {
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 100px 20px 60px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--text-main);
-            text-shadow: 0 0 50px rgba(0,0,0,0.5);
-        }
+        .hero h1 { font-size: 3.8rem; line-height: 1.15; margin-bottom: 25px; color: #fff; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; font-weight: 300; }
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            font-weight: 300;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Przycisk Biała Rękawiczka */
+        .btn-concierge {
+            background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+            color: #0b0d10;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            animation: pulse 2s infinite;
         }
-
-        /* WYSZUKIWARKA */
-        .search-container {
-            max-width: 550px;
-            margin: 0 auto 50px;
-            position: relative;
-        }
+        .btn-concierge:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.5); }
         
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* --- SEARCH --- */
+        .search-container { max-width: 550px; margin: 60px auto 40px; }
         .search-box {
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--border-subtle);
@@ -196,41 +170,63 @@
             display: flex;
             align-items: center;
             padding: 8px 25px;
-            transition: 0.4s;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
+        .search-input { width: 100%; background: transparent; border: none; color: #fff; padding: 12px 0; outline: none; font-size: 1rem; }
+        .search-icon { font-size: 1.2rem; color: var(--gold-text); margin-right: 15px; }
+
+
+        /* --- QUIZ SECTION --- */
+        .quiz-section {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            background: linear-gradient(145deg, #13151a, #0e0f12);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { color: #fff; font-size: 2rem; margin-bottom: 10px; }
+        .quiz-header p { color: var(--text-muted); }
+
+        .quiz-step { display: none; text-align: center; animation: fadeIn 0.5s; }
+        .quiz-step.active { display: block; }
         
-        .search-box:focus-within {
-            border-color: var(--gold-start);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
-            background: rgba(0,0,0,0.3);
-            transform: scale(1.02);
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .search-icon {
-            font-size: 1.2rem;
-            color: var(--gold-text);
-            margin-right: 15px;
-        }
-
-        .search-input {
-            width: 100%;
-            background: transparent;
-            border: none;
+        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .quiz-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-subtle);
             color: #fff;
-            padding: 12px 0;
-            outline: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
             font-size: 1rem;
         }
-        .search-input::placeholder { color: rgba(255,255,255,0.3); }
+        .quiz-btn:hover { border-color: var(--gold-start); background: rgba(212, 175, 55, 0.1); }
 
-        /* --- PREMIUM CARD (MY WAY) --- */
-        .recommended-section {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
+        .quiz-result { display: none; text-align: center; }
+        .quiz-result h3 { color: var(--gold-text); margin-bottom: 20px; font-size: 1.5rem; }
+        .result-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--gold-start);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+        .result-name { font-weight: 700; color: #fff; font-size: 1.2rem; }
+        .result-badge { background: var(--gold-start); color: #000; padding: 2px 8px; font-size: 0.7rem; border-radius: 4px; font-weight: 700; margin-left: 10px; }
 
+        /* --- PREMIUM CARD (My Way) --- */
+        .recommended-section { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; }
         .card-premium {
             background: linear-gradient(145deg, #16181e, #0e0f12);
             border: 1px solid var(--border-gold);
@@ -238,336 +234,118 @@
             grid-template-columns: 1.1fr 1fr;
             box-shadow: 0 20px 60px rgba(0,0,0,0.6);
             position: relative;
-            overflow: hidden;
         }
-
-        /* Efekt błysku na karcie premium */
-        .card-premium::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-start), transparent);
-            animation: shine 3s infinite;
-        }
-        @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-
-        .premium-content {
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 2;
-        }
-
-        .badge-premium {
-            background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
-            color: #000;
-            padding: 6px 14px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            align-self: flex-start;
-            margin-bottom: 25px;
-        }
-
-        .premium-content h2 {
-            font-size: 3.2rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .location-main {
-            color: var(--gold-text);
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-        }
-
-        .premium-desc {
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 35px;
-            font-weight: 300;
-        }
-
-        .details-list {
-            list-style: none;
-            margin-bottom: 40px;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 25px;
-        }
-
-        .details-list li {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 15px;
-            color: #e2e2e2;
-            font-size: 1.05rem;
-        }
-        .icon-gold { color: var(--gold-start); text-shadow: 0 0 10px var(--gold-glow); }
-
-        .btn-premium {
-            background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
-            color: #0b0d10;
-            text-decoration: none;
-            padding: 16px 45px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            align-self: flex-start;
-            transition: 0.3s;
-            border: none;
-        }
-        .btn-premium:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px var(--gold-glow);
-            filter: brightness(1.1);
-        }
-
-        .premium-visual {
-            /* ŚCIEŻKA DO ZDJĘCIA - upewnij się, że plik 5.jpg jest obok html */
-            background-image: url('5.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 500px;
-            position: relative;
-            box-shadow: inset 50px 0 100px #0a0b0e; /* Płynne przejście */
-        }
+        .premium-content { padding: 60px; z-index: 2; }
+        .badge-premium { background: var(--gold-start); color: #000; padding: 6px 14px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; margin-bottom: 25px; display: inline-block; }
+        .premium-content h2 { font-size: 3.2rem; margin-bottom: 10px; color: #fff; }
+        .location-main { color: var(--gold-text); font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 25px; }
+        .premium-desc { color: var(--text-muted); line-height: 1.8; margin-bottom: 35px; }
+        .details-list { list-style: none; margin-bottom: 40px; border-top: 1px solid var(--border-subtle); padding-top: 25px; }
+        .details-list li { margin-bottom: 15px; display: flex; gap: 15px; color: #e2e2e2; }
+        .icon-gold { color: var(--gold-start); }
+        .btn-premium { background: var(--gold-start); color: #000; padding: 16px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border: none; display: inline-block; transition: 0.3s; }
+        .btn-premium:hover { box-shadow: 0 0 30px rgba(212,175,55,0.4); }
+        .premium-visual { background-image: url('5.jpg'); background-size: cover; background-position: center; min-height: 500px; position: relative; }
 
         /* --- CATALOG GRID --- */
-        .section-header {
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-            position: relative;
-        }
-        
-        .section-header h3 {
-            color: var(--text-main);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 1.5rem;
-            display: inline-block;
-            background: var(--bg-body);
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-        .section-header::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 0; width: 100%; height: 1px;
-            background: var(--border-subtle);
-            z-index: 1;
-        }
+        .section-header { text-align: center; max-width: 1200px; margin: 0 auto 60px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; }
+        .section-header h3 { color: var(--text-main); text-transform: uppercase; letter-spacing: 3px; font-size: 1.5rem; }
 
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 120px;
-            padding: 0 20px;
-        }
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto 120px; padding: 0 20px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 35px; transition: 0.4s; display: flex; flex-direction: column; position: relative; border-radius: 4px; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold-start); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .tag-voivodeship { position: absolute; top: 25px; right: 25px; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 5px 10px; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; margin-top: 10px; }
+        .card-info { display: flex; gap: 12px; margin-bottom: 10px; color: var(--text-muted); font-size: 0.95rem; }
+        .card-footer { margin-top: auto; padding-top: 25px; border-top: 1px solid var(--border-subtle); }
+        .btn-card { display: block; text-align: center; color: var(--text-muted); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 12px; border: 1px solid var(--border-subtle); transition: 0.3s; font-weight: 600; }
+        .btn-card:hover { border-color: var(--gold-start); color: var(--gold-text); }
 
-        .card {
-            background: var(--bg-card);
+        /* --- EDUCATIONAL GRID --- */
+        .edu-section { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; }
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .edu-card {
+            background: rgba(255,255,255,0.02);
             border: 1px solid var(--border-subtle);
-            padding: 35px;
-            transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            border-radius: 4px;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-start);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .card:hover .tag-voivodeship {
-            background: var(--gold-start);
-            color: #000;
-        }
-
-        .tag-voivodeship {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--border-subtle);
-            padding: 5px 10px;
+            padding: 30px;
             transition: 0.3s;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #fff;
-            margin-top: 10px;
-        }
-
-        .card-info {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 10px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .card-footer {
-            margin-top: auto;
-            padding-top: 25px;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .btn-card {
-            display: block;
-            text-align: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 12px;
-            border: 1px solid var(--border-subtle);
-            transition: 0.3s;
-            font-weight: 600;
-        }
-        .btn-card:hover {
-            border-color: var(--gold-start);
-            color: var(--gold-text);
-            background: rgba(212, 175, 55, 0.08);
-        }
-
-        /* --- SEO CONTENT & FAQ --- */
-        .content-container {
-            max-width: 900px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
-
-        .seo-section {
-            margin-bottom: 80px;
-        }
-        
-        .seo-title {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .seo-title span { color: var(--gold-text); }
-
-        .seo-text-block {
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-        .seo-text-block strong { color: #e2e2e2; }
-
-        /* FAQ Styling */
-        .faq-item {
-            background: #13151a;
-            border-bottom: 1px solid var(--border-subtle);
-            transition: 0.3s;
-        }
-        .faq-item:first-of-type { border-top: 1px solid var(--border-subtle); }
-        .faq-item:hover { background: #1a1d24; }
-
-        .faq-item summary {
-            padding: 25px;
             cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #f0f0f0;
-            font-weight: 500;
-            font-size: 1.1rem;
+            position: relative;
         }
+        .edu-card:hover { border-color: var(--gold-start); background: rgba(255,255,255,0.04); }
+        .edu-icon { font-size: 2rem; color: var(--gold-start); margin-bottom: 15px; }
+        .edu-card h4 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
+        .edu-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
         
-        .faq-item summary::after { content: '+'; color: var(--gold-start); font-size: 1.5rem; transition: 0.3s; }
-        .faq-item[open] summary::after { content: '−'; transform: rotate(180deg); color: #fff; }
-
-        .faq-item p {
-            padding: 0 25px 30px;
-            color: var(--text-muted);
-            line-height: 1.7;
+        .edu-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            color: #d1d5db;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            padding-top: 0;
+            border-top: 1px solid transparent;
+        }
+        .edu-card.active .edu-content {
+            max-height: 500px; /* arbitrary large number */
+            border-top-color: var(--border-subtle);
+            padding-top: 15px;
+            margin-top: 15px;
         }
 
-        /* --- MODAL --- */
+        /* --- FAQ --- */
+        .content-container { max-width: 900px; margin: 0 auto 100px; padding: 0 20px; }
+        .faq-item { background: #13151a; border-bottom: 1px solid var(--border-subtle); transition: 0.3s; }
+        .faq-item:first-of-type { border-top: 1px solid var(--border-subtle); }
+        .faq-item summary { padding: 25px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #f0f0f0; font-weight: 500; font-size: 1.1rem; }
+        .faq-item summary::after { content: '+'; color: var(--gold-start); font-size: 1.5rem; }
+        .faq-item[open] summary::after { content: '−'; color: #fff; }
+        .faq-item p { padding: 0 25px 30px; color: var(--text-muted); line-height: 1.7; }
+
+        /* --- MODALS --- */
         .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.3s;
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(5px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: 0.3s;
         }
         .modal-overlay.active { opacity: 1; pointer-events: all; }
-
+        
         .modal-box {
-            background: #181b21;
-            padding: 50px;
-            width: 90%;
-            max-width: 500px;
-            border: 1px solid var(--gold-start);
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
-            transform: translateY(30px);
-            transition: 0.4s;
-            position: relative;
+            background: #181b21; padding: 50px; width: 90%; max-width: 500px;
+            border: 1px solid var(--gold-start); box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
+            transform: translateY(30px); transition: 0.4s; position: relative;
         }
         .modal-overlay.active .modal-box { transform: translateY(0); }
-
-        .modal-box h2 { color: #fff; margin-bottom: 10px; font-size: 2rem; }
-        .modal-box p { color: var(--text-muted); margin-bottom: 30px; }
-
+        
+        .modal-box h2 { color: #fff; margin-bottom: 10px; font-size: 1.8rem; }
+        .modal-box p { color: var(--text-muted); margin-bottom: 25px; }
         .input-row { margin-bottom: 20px; }
-        .input-row label { display: block; color: var(--gold-text); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
-        .input-row input { width: 100%; background: #0a0b0e; border: 1px solid var(--border-subtle); padding: 15px; color: #fff; outline: none; transition: 0.3s; }
-        .input-row input:focus { border-color: var(--gold-start); box-shadow: 0 0 15px rgba(212,175,55,0.1); }
+        .input-row label { display: block; color: var(--gold-text); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; }
+        .input-row input, .input-row select { width: 100%; background: #0a0b0e; border: 1px solid var(--border-subtle); padding: 15px; color: #fff; outline: none; }
+        .input-row input:focus, .input-row select:focus { border-color: var(--gold-start); }
+        .btn-submit { width: 100%; background: linear-gradient(90deg, var(--gold-start), var(--gold-end)); color: #000; padding: 15px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; }
+        .close-modal { position: absolute; top: 20px; right: 25px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
 
-        .btn-submit { width: 100%; background: linear-gradient(90deg, var(--gold-start), var(--gold-end)); color: #000; padding: 15px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
-        .btn-submit:hover { filter: brightness(1.1); }
-
-        .close-modal { position: absolute; top: 20px; right: 25px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.5; transition: 0.3s; }
-        .close-modal:hover { opacity: 1; color: var(--gold-start); }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            background: #050608;
+        /* Floating Button Mobile */
+        .floating-cta {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--gold-start); color: #000;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; box-shadow: 0 10px 30px rgba(212,175,55,0.4);
+            cursor: pointer; z-index: 900;
+            animation: pulse 3s infinite;
         }
-        footer strong { color: #fff; }
+        
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: 0.9rem; background: #050608; }
 
-        /* Responsive */
         @media(max-width: 900px) {
             .card-premium { grid-template-columns: 1fr; }
             .premium-visual { min-height: 250px; order: -1; }
-            .hero h1 { font-size: 2.8rem; }
-            .premium-content h2 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.5rem; }
             header { flex-direction: column; gap: 20px; }
+            .quiz-options { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -580,19 +358,80 @@
         </a>
         <div class="contact-bar">
             <a href="tel:731395295" class="contact-link">731 395 295</a>
-            <a href="mailto:kontakt@osrodek-myway.pl" class="contact-link">kontakt@osrodek-myway.pl</a>
-            <button class="btn-gold-outline" onclick="openModal()">+ Zgłoś Ośrodek</button>
+            <button class="btn-gold-outline" onclick="openModal('modalAdd')">+ Zgłoś Ośrodek</button>
         </div>
     </header>
 
+    <div class="floating-cta" onclick="openModal('modalConcierge')">👋</div>
+
     <section class="hero reveal">
         <h1>Wybierz swoje <span class="gold-text">miejsce</span></h1>
-        <p>Ekskluzywna baza prywatnych ośrodków terapii w Polsce.<br>Odkryj przestrzeń, która pozwoli Ci zacząć od nowa w atmosferze pełnej dyskrecji.</p>
+        <p>Ekskluzywna baza prywatnych ośrodków terapii w Polsce.<br>Odkryj przestrzeń, która pozwoli Ci zacząć od nowa.</p>
         
+        <button class="btn-concierge" onclick="openModal('modalConcierge')">
+            <span>✨ Dobierz ośrodek dla mnie</span>
+        </button>
+
         <div class="search-container">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" id="searchInput" placeholder="Szukaj ośrodka, miasta lub województwa...">
+                <input type="text" class="search-input" id="searchInput" placeholder="Szukaj po nazwie lub lokalizacji...">
+            </div>
+        </div>
+    </section>
+
+    <section class="quiz-section reveal">
+        <div class="quiz-header">
+            <h2 class="gold-text">Test dopasowania</h2>
+            <p>Odpowiedz na 3 pytania, a nasz algorytm wskaże najlepsze miejsce dla Ciebie.</p>
+        </div>
+        
+        <div id="quizContainer">
+            <div class="quiz-step active" id="q1">
+                <h3>Z jakim problemem szukasz pomocy?</h3>
+                <div class="quiz-options">
+                    <div class="quiz-btn" onclick="nextQuestion(2)">Alkohol</div>
+                    <div class="quiz-btn" onclick="nextQuestion(2)">Narkotyki / Leki</div>
+                    <div class="quiz-btn" onclick="nextQuestion(2)">Hazard / Behawioralne</div>
+                    <div class="quiz-btn" onclick="nextQuestion(2)">Podwójna diagnoza</div>
+                </div>
+            </div>
+            <div class="quiz-step" id="q2">
+                <h3>Jaki jest preferowany standard ośrodka?</h3>
+                <div class="quiz-options">
+                    <div class="quiz-btn" onclick="nextQuestion(3)">Standardowy</div>
+                    <div class="quiz-btn" onclick="nextQuestion(3)">Podwyższony</div>
+                    <div class="quiz-btn" onclick="nextQuestion(3)">Premium / VIP</div>
+                    <div class="quiz-btn" onclick="nextQuestion(3)">Bez znaczenia</div>
+                </div>
+            </div>
+            <div class="quiz-step" id="q3">
+                <h3>Preferowana lokalizacja?</h3>
+                <div class="quiz-options">
+                    <div class="quiz-btn" onclick="showResults()">Północna Polska (Morze)</div>
+                    <div class="quiz-btn" onclick="showResults()">Centralna Polska</div>
+                    <div class="quiz-btn" onclick="showResults()">Południe (Góry)</div>
+                    <div class="quiz-btn" onclick="showResults()">Cała Polska</div>
+                </div>
+            </div>
+            <div class="quiz-result" id="qResult">
+                <h3>Twoje rekomendacje:</h3>
+                
+                <div class="result-card" style="border-color: var(--gold-start); background: rgba(212,175,55,0.05);">
+                    <span class="result-name">1. My Way (Kąpino)</span>
+                    <span class="result-badge">IDEALNY WYBÓR</span>
+                </div>
+                
+                <div class="result-card">
+                    <span class="result-name">2. Ośrodek ARKA (Wisła)</span>
+                </div>
+                
+                <div class="result-card">
+                    <span class="result-name">3. Vita Nova (Mazowieckie)</span>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Na podstawie Twoich odpowiedzi.</p>
+                <button class="btn-concierge" style="margin-top: 20px; font-size: 0.8rem; padding: 12px 25px;" onclick="openModal('modalConcierge')">Umów konsultację</button>
             </div>
         </div>
     </section>
@@ -600,11 +439,11 @@
     <section class="recommended-section reveal">
         <div class="card-premium">
             <div class="premium-content">
-                <div class="badge-premium">Rekomendacja Ekspertów</div>
+                <div class="badge-premium">Wybór Ekspertów</div>
                 <h2>My Way</h2>
                 <div class="location-main">Kąpino k. Gdyni</div>
                 <p class="premium-desc">
-                    Prywatny ośrodek o najwyższym standardzie, stworzony dla osób wymagających. Miejsce, gdzie profesjonalna terapia uzależnień łączy się z absolutną dyskrecją i komfortem 5-gwiazdkowego hotelu. Idealne warunki do odzyskania równowagi.
+                    Prywatny ośrodek o najwyższym standardzie. Miejsce, gdzie profesjonalna terapia uzależnień łączy się z absolutną dyskrecją i komfortem. Idealne warunki do odzyskania równowagi.
                 </p>
                 <ul class="details-list">
                     <li><span class="icon-gold">📍</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
@@ -628,7 +467,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 795 589 872</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Nowa+Droga+Wrocław" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Kujawsko-Pom.</div>
             <h3>Ośrodek Spichlerz</h3>
@@ -636,7 +474,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 884 916 008</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Spichlerz+Dobrzyń" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Lubelskie</div>
             <h3>Zielona Klinika</h3>
@@ -644,7 +481,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 723 338 337</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Zielona+Klinika+Motycz" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Lubuskie</div>
             <h3>MCLU "Teresa Wagner"</h3>
@@ -652,7 +488,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 95 742 87 56</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=MCLU+Międzyrzecz" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Łódzkie</div>
             <h3>Klinika Patromed</h3>
@@ -660,7 +495,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 660 254 050</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Patromed+Łódź" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Małopolskie</div>
             <h3>TU i TERAZ</h3>
@@ -668,7 +502,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 669 969 209</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=TU+i+TERAZ+Kraków" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Mazowieckie</div>
             <h3>Vita Nova</h3>
@@ -676,7 +509,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 572 905 999</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Vita+Nova+Marki" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Opolskie</div>
             <h3>OPM-MED</h3>
@@ -684,7 +516,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 882 597 992</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=OPM-MED+Opole" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Podkarpackie</div>
             <h3>Iwonicz-Zdrój</h3>
@@ -692,7 +523,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 517 060 303</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Ośrodek+Iwonicz-Zdrój" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Podlaskie</div>
             <h3>Virtus</h3>
@@ -700,7 +530,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 698 335 897</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Virtus+Białystok" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Śląskie</div>
             <h3>Ośrodek ARKA</h3>
@@ -708,7 +537,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 783 218 321</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Arka+Wisła" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Świętokrzyskie</div>
             <h3>NASZ DOM</h3>
@@ -716,7 +544,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 698 323 698</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Nasz+Dom+Dąbrowa" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Warm-Maz.</div>
             <h3>In Puris</h3>
@@ -724,7 +551,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 602 330 352</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=In+Puris+Milejowo" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Wielkopolskie</div>
             <h3>AGNUS</h3>
@@ -732,7 +558,6 @@
             <div class="card-info"><span class="icon-gold">📞</span> +48 533 221 555</div>
             <div class="card-footer"><a href="https://www.google.com/search?q=Agnus+Poznań" target="_blank" class="btn-card">Zobacz Więcej</a></div>
         </div>
-
         <div class="card reveal">
             <div class="tag-voivodeship">Zachodniopom.</div>
             <h3>Centrum ANON</h3>
@@ -742,58 +567,103 @@
         </div>
     </section>
 
-    <div class="content-container reveal">
+    <section class="edu-section reveal">
+        <div class="section-header" style="border:none;">
+            <h3>Kompendium Wiedzy</h3>
+        </div>
         
-        <section class="seo-section">
-            <h2 class="seo-title">Standardy leczenia w <span>Polsce</span></h2>
-            
-            <div class="seo-text-block">
-                <p>Wybór prywatnego ośrodka terapii uzależnień to decyzja, która otwiera drzwi do nowego życia. W przeciwieństwie do placówek publicznych, prywatne kliniki takie jak <strong>My Way</strong> oferują natychmiastową dostępność, bez kolejek i zbędnych formalności. Kluczowym aspektem jest <strong>holistyczne podejście</strong> – leczenie nie dotyczy tylko ciała (detoks), ale przede wszystkim psychiki i ducha.</p>
+        <div class="edu-grid">
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">🎓</div>
+                <h4>Jak wybrać ośrodek?</h4>
+                <p>Sprawdź, co jest kluczowe przy podejmowaniu decyzji.</p>
+                <div class="edu-content">
+                    Zwróć uwagę na kwalifikacje kadry (certyfikowani terapeuci), dostępność opieki medycznej oraz opinie byłych pacjentów. Ważne jest, aby ośrodek oferował zindywidualizowany plan terapii, a nie tylko grupowe zajęcia.
+                </div>
             </div>
-            
-            <div class="seo-text-block">
-                <p>Nowoczesna terapia uzależnień opiera się na intensywnej pracy w małych grupach oraz sesjach indywidualnych z certyfikowanymi terapeutami. Prywatne ośrodki zapewniają warunki sprzyjające wyciszeniu: komfortowe pokoje, strefy relaksu i otoczenie natury. Ważnym elementem jest także <strong>opieka poszpitalna</strong> (aftercare), która pomaga utrzymać trzeźwość po opuszczeniu ośrodka.</p>
-            </div>
-        </section>
 
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">🚩</div>
+                <h4>Na co uważać?</h4>
+                <p>Czerwone flagi, które powinny Cię zaniepokoić.</p>
+                <div class="edu-content">
+                    Unikaj miejsc, które gwarantują 100% skuteczności (terapia to proces), nie pozwalają na odwiedziny (po okresie aklimatyzacji) lub mają podejrzanie niską cenę w porównaniu do standardu rynkowego.
+                </div>
+            </div>
+
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">🎒</div>
+                <h4>Co zabrać ze sobą?</h4>
+                <p>Lista niezbędnych rzeczy na pobyt stacjonarny.</p>
+                <div class="edu-content">
+                    Wygodne ubrania, środki higieny osobistej, dokumentację medyczną oraz leki przyjmowane na stałe. Warto zabrać książki. Zazwyczaj zakazane są urządzenia z dostępem do internetu (zależy od ośrodka) oraz produkty zawierające alkohol.
+                </div>
+            </div>
+
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">💊</div>
+                <h4>Detoks a Terapia</h4>
+                <p>Czym różnią się te dwa etapy leczenia?</p>
+                <div class="edu-content">
+                    Detoks to proces medyczny oczyszczania organizmu z toksyn (trwa ok. 7-10 dni). Terapia to praca psychologiczna nad mechanizmami uzależnienia. Sam detoks bez terapii rzadko prowadzi do trwałej trzeźwości.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-container reveal">
         <h2 style="color: #fff; margin-bottom: 30px; border-top: 1px solid var(--border-subtle); padding-top: 50px;">Najczęściej Zadawane Pytania</h2>
         
         <details class="faq-item">
             <summary>Jak wygląda proces przyjęcia do ośrodka?</summary>
-            <p>Proces jest maksymalnie uproszczony i dyskretny. Wystarczy kontakt telefoniczny w celu ustalenia terminu. W większości prywatnych ośrodków nie jest wymagane skierowanie lekarskie. Decyzja o podjęciu leczenia jest dobrowolna.</p>
+            <p>Proces jest maksymalnie uproszczony i dyskretny. Wystarczy kontakt telefoniczny w celu ustalenia terminu. W większości prywatnych ośrodków nie jest wymagane skierowanie lekarskie.</p>
         </details>
-
         <details class="faq-item">
             <summary>Czy pobyt w ośrodku jest w pełni anonimowy?</summary>
-            <p>Tak, anonimowość to nasz priorytet. Prywatne placówki nie mają obowiązku zgłaszania pacjentów do państwowych rejestrów. Twoje dane są chronione, a pobyt może być traktowany jako urlop wypoczynkowy.</p>
+            <p>Tak, anonimowość to nasz priorytet. Prywatne placówki nie mają obowiązku zgłaszania pacjentów do państwowych rejestrów. Twoje dane są chronione.</p>
         </details>
-
         <details class="faq-item">
             <summary>Ile trwa skuteczna terapia stacjonarna?</summary>
-            <p>Rekomendowany czas trwania terapii podstawowej to zazwyczaj od 4 do 8 tygodni. Jest to okres niezbędny do przerwania ciągu, odtrucia organizmu (detoks) oraz nabycia narzędzi psychologicznych do radzenia sobie z głodem substancji.</p>
+            <p>Rekomendowany czas trwania terapii podstawowej to zazwyczaj od 4 do 8 tygodni. Jest to okres niezbędny do przerwania ciągu i nabycia narzędzi do trzeźwienia.</p>
         </details>
-
         <details class="faq-item">
             <summary>Czy mogę korzystać z telefonu i laptopa?</summary>
-            <p>W ośrodku My Way rozumiemy potrzeby zawodowe i rodzinne pacjentów. Dostęp do urządzeń elektronicznych jest możliwy, jednak zazwyczaj regulowany w określonych godzinach, aby nie zakłócał procesu terapeutycznego.</p>
+            <p>W My Way dbamy o balans. Dostęp do urządzeń elektronicznych jest możliwy, jednak zazwyczaj regulowany w określonych godzinach.</p>
         </details>
-
         <details class="faq-item">
             <summary>Jakie metody leczenia są stosowane?</summary>
-            <p>Stosujemy metody o udowodnionej skuteczności, m.in. terapię poznawczo-behawioralną, dialog motywujący, treningi asertywności i radzenia sobie ze stresem. Program jest dostosowywany indywidualnie do historii i potrzeb każdego pacjenta.</p>
+            <p>Stosujemy metody o udowodnionej skuteczności, m.in. terapię poznawczo-behawioralną, warsztaty umiejętności, treningi asertywności i relaksację.</p>
         </details>
     </div>
 
-    <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-overlay" id="modalAdd">
         <div class="modal-box">
-            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <button class="close-modal" onclick="closeModal('modalAdd')">&times;</button>
             <h2>Zgłoś ośrodek</h2>
-            <p>Dołącz do bazy najlepszych placówek w Polsce.</p>
-            <form id="addForm">
+            <p>Dołącz do bazy najlepszych placówek.</p>
+            <form onsubmit="handleForm(event, 'modalAdd')">
                 <div class="input-row"><label>Nazwa Ośrodka</label><input type="text" required></div>
-                <div class="input-row"><label>Województwo / Miasto</label><input type="text" required></div>
-                <div class="input-row"><label>Telefon Kontaktowy</label><input type="text" required></div>
+                <div class="input-row"><label>Miasto</label><input type="text" required></div>
+                <div class="input-row"><label>Telefon</label><input type="text" required></div>
                 <button type="submit" class="btn-submit">Wyślij Zgłoszenie</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalConcierge">
+        <div class="modal-box" style="border-color: #fff; box-shadow: 0 0 50px rgba(255,255,255,0.1);">
+            <button class="close-modal" onclick="closeModal('modalConcierge')">&times;</button>
+            <h2 class="gold-text">Usługa Concierge</h2>
+            <p>Wypełnij formularz. Nasz ekspert oddzwoni w ciągu 30 min i dobierze dyskretnie najlepszą placówkę.</p>
+            <form onsubmit="handleForm(event, 'modalConcierge')">
+                <div class="input-row"><label>Dla kogo szukasz pomocy?</label>
+                    <select style="width:100%; background:#0a0b0e; border:1px solid #333; padding:15px; color:#fff;">
+                        <option>Dla siebie</option>
+                        <option>Dla bliskiej osoby</option>
+                    </select>
+                </div>
+                <div class="input-row"><label>Numer telefonu do kontaktu</label><input type="text" placeholder="+48..." required></div>
+                <button type="submit" class="btn-submit">Zamów bezpłatną konsultację</button>
             </form>
         </div>
     </div>
@@ -806,10 +676,29 @@
     </footer>
 
     <script>
-        // LIVE SEARCH
+        // --- QUIZ LOGIC ---
+        function nextQuestion(qNumber) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('q' + qNumber).classList.add('active');
+        }
+
+        function showResults() {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            const resultDiv = document.getElementById('qResult');
+            resultDiv.style.display = 'block';
+            resultDiv.classList.add('active'); // for animation if needed
+            // Scroll to result
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- EDUCATION TOGGLE ---
+        function toggleEdu(card) {
+            card.classList.toggle('active');
+        }
+
+        // --- LIVE SEARCH ---
         const searchInput = document.getElementById('searchInput');
         const cards = document.querySelectorAll('.card');
-
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();
             cards.forEach(card => {
@@ -818,7 +707,7 @@
             });
         });
 
-        // ANIMACJE SCROLL
+        // --- ANIMATIONS ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -833,31 +722,33 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // MODAL
-        const modal = document.getElementById('modalOverlay');
-        const form = document.getElementById('addForm');
+        // --- MODALS ---
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-        function openModal() { modal.classList.add('active'); }
-        function closeModal() { modal.classList.remove('active'); }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
 
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) closeModal();
-        });
-
-        form.addEventListener('submit', (e) => {
+        function handleForm(e, modalId) {
             e.preventDefault();
+            const form = e.target;
             const btn = form.querySelector('button');
             const originalText = btn.innerText;
-            btn.innerText = "Wysłano pomyślnie!";
-            btn.style.background = "#4ade80";
-            btn.style.color = "#000";
+            
+            btn.innerText = "Wysyłanie...";
+            btn.style.background = "#4ade80"; // green
+            
             setTimeout(() => {
-                closeModal();
+                closeModal(modalId);
                 btn.innerText = originalText;
                 btn.style.background = "linear-gradient(90deg, var(--gold-start), var(--gold-end))";
                 form.reset();
-            }, 2000);
-        });
+                alert("Dziękujemy. Zgłoszenie przyjęte.");
+            }, 1500);
+        }
     </script>
 </body>
 </html>
