@@ -4,168 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Prywatne Ośrodki Leczenia Uzależnień - Katalog Premium 2025</title>
-    <meta name="description" content="Ekskluzywny katalog ośrodków leczenia uzależnień. Terapia premium, dyskrecja, komfort. Znajdź pomoc w Twoim województwie.">
+    <title>Prywatne Ośrodki Leczenia Uzależnień - Katalog Premium 2025 | My Way</title>
+    <meta name="description" content="Ekskluzywny katalog prywatnych ośrodków leczenia uzależnień w Polsce. Sprawdzone placówki, terapia alkoholowa i narkotykowa. Rekomendacja: Ośrodek My Way (Pomorskie).">
+    <meta name="keywords" content="ośrodek leczenia uzależnień, prywatny odwyk, terapia uzależnień cennik, ośrodek zamknięty, My Way Kąpino, leczenie alkoholizmu">
+    <meta name="robots" content="index, follow">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "My Way - Ośrodek Leczenia Uzależnień",
+      "image": "5.jpg",
+      "@id": "https://osrodek-myway.pl",
+      "url": "https://osrodek-myway.pl",
+      "telephone": "+48731395295",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Wichrowe Wzgórza 21",
+        "addressLocality": "Kąpino",
+        "postalCode": "84-200",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 54.6086,
+        "longitude": 18.1756
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+
     <style>
         :root {
-            /* Nowoczesna paleta Premium Beige/Gold */
-            --bg-body: #FDFCF8;
-            --surface: #ffffff;
-            --primary: #C4A068; /* Złoto */
-            --primary-dark: #967645;
-            --text-dark: #2C2825;
-            --text-light: #6B655F;
-            --border: rgba(196, 160, 104, 0.2);
-            --shadow-soft: 0 10px 40px -10px rgba(44, 40, 37, 0.05);
-            --shadow-hover: 0 25px 50px -12px rgba(196, 160, 104, 0.15);
-            --radius: 16px;
+            /* Paleta: Super Premium / Warm Luxury */
+            --bg-body: #fdfcf8;
+            --bg-card: #ffffff;
+            --bg-card-hover: #fcf9f4;
+            --accent: #c4a068;
+            --accent-light: #e3cfa8;
+            --accent-glow: rgba(196, 160, 104, 0.25);
+            --text-main: #4a4036;
+            --text-muted: #8c8279;
+            --border-subtle: rgba(196, 160, 104, 0.15);
+            --shadow-premium: 0 15px 40px -10px rgba(74, 64, 54, 0.08);
+            --shadow-hover: 0 25px 60px -10px rgba(196, 160, 104, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Manrope', sans-serif; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
         body {
             background-color: var(--bg-body);
-            color: var(--text-dark);
+            color: var(--text-main);
             overflow-x: hidden;
-            background-image: radial-gradient(circle at top right, rgba(196,160,104,0.05), transparent 40%);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255, 250, 240, 1) 0%, transparent 70%),
+                radial-gradient(circle at 85% 90%, rgba(196, 160, 104, 0.08) 0%, transparent 50%);
+            min-height: 100vh;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
 
-        /* --- NAVIGATION --- */
-        nav {
+        /* --- HEADER & LOGO --- */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(253, 252, 248, 0.85);
-            backdrop-filter: blur(20px);
+            background: rgba(253, 252, 248, 0.9);
+            backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-premium);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-symbol {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
         
-        .logo-icon {
-            width: 35px; height: 35px;
-            background: var(--primary);
-            mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20h-13L12 5.5z"/></svg>') no-repeat center;
-            -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20h-13L12 5.5z"/></svg>') no-repeat center;
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            inset: 30%;
+            background: var(--bg-body);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
 
-        .nav-actions button {
-            padding: 12px 28px;
-            border: 1px solid var(--primary);
-            background: transparent;
-            color: var(--primary-dark);
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-top: 2px;
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-item {
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+        .contact-item:hover { color: var(--accent); }
+
+        .btn-gold {
+            padding: 10px 24px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
         }
 
-        .nav-actions button:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 5px 20px rgba(196, 160, 104, 0.3);
+        .btn-gold:hover {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
-            position: relative;
             text-align: center;
-            padding: 100px 20px 60px;
-            background: linear-gradient(180deg, rgba(253,252,248,0) 0%, var(--bg-body) 100%);
+            padding: 90px 20px 70px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--primary);
-            font-style: italic;
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            background: linear-gradient(to right, var(--text-main), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* SEARCH BAR - EXTRA FEATURE */
-        .search-container {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 18px 25px;
-            padding-left: 50px;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: white;
-            box-shadow: var(--shadow-soft);
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary);
+            color: var(--text-muted);
             font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        /* --- PREMIUM CARD (MY WAY) --- */
-        .premium-wrapper {
+        /* --- SEKCJA PREMIUM --- */
+        .recommended-section {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
 
-        .premium-card {
+        .card-premium {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: white;
-            border-radius: 24px;
+            grid-template-columns: 1.2fr 1fr;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(196, 160, 104, 0.15);
-            border: 1px solid rgba(196, 160, 104, 0.1);
+            box-shadow: var(--shadow-premium);
             position: relative;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
+        }
+        
+        .card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .premium-content {
@@ -173,512 +232,707 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: linear-gradient(to bottom right, #fff, #f9f5ef);
         }
 
-        .badge {
-            display: inline-block;
+        .badge-premium {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid var(--border-subtle);
             padding: 6px 14px;
-            background: rgba(196, 160, 104, 0.1);
-            color: var(--primary-dark);
-            border-radius: 20px;
-            font-size: 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            width: fit-content;
+            letter-spacing: 1.5px;
+            align-self: flex-start;
+            margin-bottom: 25px;
         }
 
         .premium-content h2 {
             font-size: 3rem;
+            color: var(--text-main);
             margin-bottom: 10px;
         }
 
-        .location {
-            color: var(--primary);
-            font-weight: 500;
+        .location-highlight {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 25px;
         }
 
-        .premium-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-            margin-bottom: 30px;
+        .premium-desc {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-weight: 400;
+            font-size: 1.05rem;
         }
 
-        .feature-item {
+        .details-list {
+            list-style: none;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 25px;
+            margin-bottom: 35px;
+        }
+
+        .details-list li {
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-weight: 500;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--text-dark);
+            gap: 12px;
         }
         
-        .feature-item span { color: var(--primary); }
+        .details-list li span {
+            color: var(--accent);
+        }
 
-        .btn-main {
-            padding: 16px 32px;
-            background: var(--text-dark);
-            color: white;
+        .btn-visit-premium {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 16px 36px;
             text-decoration: none;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
+            border-radius: 4px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            text-align: center;
             transition: 0.3s;
-            align-self: flex-start;
+            max-width: fit-content;
         }
-        
-        .btn-main:hover {
-            background: var(--primary);
+        .btn-visit-premium:hover {
+            background: #b38f57;
+            box-shadow: 0 8px 25px var(--accent-glow);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .premium-image {
-            /* Używamy zdjęcia z URL, żeby na pewno zadziałało */
-            background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1000&auto=format&fit=crop'); 
+        .premium-visual {
+            background-color: #eee;
+            /* WAŻNE: Plik 5.jpg musi być w tym samym folderze co index.html */
+            background-image: url('5.jpg'); 
             background-size: cover;
             background-position: center;
             position: relative;
-        }
-
-        .premium-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(255,255,255,1) 0%, transparent 20%);
-        }
-
-        /* --- CATALOG GRID --- */
-        .catalog-section {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
-        
-        .section-header {
             display: flex;
-            justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 40px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            justify-content: flex-start;
+            min-height: 400px; /* Zabezpieczenie gdyby zdjęcie się nie wczytało */
+            box-shadow: inset 50px -50px 100px rgba(74, 64, 54, 0.2);
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #f0f0f0;
-            border-radius: var(--radius);
-            padding: 30px;
-            transition: all 0.4s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-
-        .card-tag {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: var(--text-light);
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-        .card-info {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            display: flex;
-            gap: 10px;
-        }
-        .card-info i { color: var(--primary); min-width: 20px; }
-
-        .btn-card {
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid #f5f5f5;
-            text-align: center;
-        }
-        
-        .btn-card a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-            display: block;
-            width: 100%;
-        }
-        
-        .btn-card a:hover { color: var(--primary); }
-
-        /* --- CONTENT & FAQ --- */
-        .content-area {
-            max-width: 800px;
+        /* --- SEO CONTENT & FAQ STYLE --- */
+        .seo-faq-container {
+            max-width: 900px;
             margin: 0 auto 100px;
             padding: 0 20px;
         }
 
-        .seo-text h2 { font-size: 2rem; margin-bottom: 20px; }
-        .seo-text p { line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
+        .seo-block {
+            text-align: left;
+            margin-bottom: 60px;
+        }
 
-        .faq-box details {
-            background: white;
-            border-radius: 12px;
+        .seo-block h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .seo-block p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
             overflow: hidden;
             transition: 0.3s;
         }
-        
-        .faq-box details[open] { box-shadow: var(--shadow-soft); }
 
-        .faq-box summary {
+        .faq-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(196, 160, 104, 0.1);
+        }
+
+        .faq-item summary {
             padding: 20px;
-            cursor: pointer;
             font-weight: 600;
+            cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: var(--text-main);
         }
-        
-        .faq-box summary::after { content: '+'; color: var(--primary); font-size: 1.5rem; }
-        .faq-box details[open] summary::after { content: '-'; }
 
-        .faq-box p {
-            padding: 0 20px 25px;
-            color: var(--text-light);
+        .faq-item summary::after {
+            content: '+';
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .faq-item[open] summary::after {
+            content: '-';
+        }
+
+        .faq-item p {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
             line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+            border-top: 1px solid rgba(0,0,0,0.03);
+            padding-top: 15px;
         }
 
-        /* --- MODAL --- */
-        .modal-overlay {
-            position: fixed; inset: 0;
-            background: rgba(44, 40, 37, 0.6);
-            backdrop-filter: blur(5px);
-            display: none; align-items: center; justify-content: center;
-            z-index: 9999;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .modal-overlay.active { display: flex; opacity: 1; }
-
-        .modal-box {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            width: 100%; max-width: 450px;
-            position: relative;
-            transform: scale(0.9); transition: 0.3s;
-        }
-        .modal-overlay.active .modal-box { transform: scale(1); }
-
-        .form-input {
-            width: 100%; padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-        }
-        .form-input:focus { border-color: var(--primary); }
-
-        /* Footer */
-        footer {
-            background: #F8F6F2;
-            padding: 60px 20px;
+        /* --- KATALOG GRID --- */
+        .section-title {
             text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--text-light);
+            margin-bottom: 50px;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .tag-voivodeship {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--border-subtle);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            background: var(--bg-body);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        .info-row span {
+            color: var(--accent);
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .btn-card-visit {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-card-visit:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* --- MODAL / POPUP --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(74, 64, 54, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+            z-index: 9999;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 45px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            transform: scale(0.95);
+            transition: 0.3s ease;
+            position: relative;
+        }
+        .modal-overlay.active .modal { transform: scale(1); }
+
+        .modal h2 { 
+            margin-bottom: 10px; 
+            color: var(--text-main); 
+            font-size: 1.8rem;
         }
         
-        .animate { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .close-btn:hover { color: var(--accent); }
 
-        @media(max-width: 768px) {
-            .premium-card { grid-template-columns: 1fr; }
-            .premium-image { height: 300px; order: -1; }
-            .hero h1 { font-size: 2.5rem; }
+        .form-group { margin-bottom: 20px; }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .form-group input:focus { 
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .submit-btn:hover { 
+            background: #b38f57;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: #faf8f5;
+        }
+
+        @media (max-width: 900px) {
+            .card-premium { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            header { flex-direction: column; gap: 20px; }
+            .logo { margin-bottom: 10px; }
+            .premium-visual { min-height: 300px; order: -1; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="logo">
-            <div class="logo-icon"></div>
-            Katalog Premium
+            <div class="logo-symbol"></div>
+            <div class="logo-text">
+                Katalog
+                <span>Ośrodków</span>
+            </div>
         </div>
-        <div class="nav-actions">
-            <button onclick="openModal()">+ Zgłoś Ośrodek</button>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <h1 class="animate">Wybierz swoje <span>miejsce</span></h1>
-        <p class="animate delay-1">Kuratorowana lista najlepszych prywatnych ośrodków w Polsce.</p>
-        
-        <div class="search-container animate delay-2">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Wpisz województwo lub miasto..." onkeyup="filterCenters()">
+        <div class="contact-bar">
+            <div class="contact-item">731 395 295</div>
+            <div class="contact-item">kontakt@osrodek-myway.pl</div>
+            <button class="btn-gold" id="openModalBtn">+ Zgłoś ośrodek</button>
         </div>
     </header>
 
-    <section class="premium-wrapper animate delay-2">
-        <div class="premium-card">
+    <section class="hero">
+        <h1>Wybierz swoje miejsce</h1>
+        <p>Ekskluzywna baza prywatnych ośrodków terapii. <br>Znajdź przestrzeń, która pozwoli Ci zacząć od nowa.</p>
+    </section>
+
+    <section class="recommended-section">
+        <div class="card-premium">
             <div class="premium-content">
-                <span class="badge">Rekomendacja 2025</span>
+                <div class="badge-premium">Rekomendacja</div>
                 <h2>My Way</h2>
-                <div class="location">
-                    <span>📍</span> Kąpino k. Gdyni (Pomorskie)
+                <div class="location-highlight">
+                    <span>📍</span> Kąpino k. Gdyni
                 </div>
-                <p style="color: #6B655F; line-height: 1.6; margin-bottom: 20px;">
-                    Absolutny standard premium. Ośrodek położony w malowniczej otulinie Trójmiejskiego Parku Krajobrazowego. Dyskrecja, indywidualne podejście i warunki hotelowe 5*.
+                <p class="premium-desc">
+                    Prywatny ośrodek o najwyższym standardzie. Miejsce, gdzie profesjonalna terapia łączy się z dyskrecją i komfortem hotelowym. Idealne warunki do odzyskania równowagi w otoczeniu natury.
                 </p>
-                <div class="premium-features">
-                    <div class="feature-item"><span>✓</span> Pokoje 1-osobowe</div>
-                    <div class="feature-item"><span>✓</span> Basen i SPA</div>
-                    <div class="feature-item"><span>✓</span> Terapia Holistyczna</div>
-                    <div class="feature-item"><span>✓</span> Pełna Anonimowość</div>
+                <ul class="details-list">
+                    <li><span>🏢</span> ul. Wichrowe Wzgórza 21, 84-200 Kąpino</li>
+                    <li><span>📞</span> +48 731 395 295</li>
+                </ul>
+                <a href="http://osrodek-myway.pl" target="_blank" class="btn-visit-premium">Odwiedź stronę</a>
+            </div>
+            <div class="premium-visual" role="img" aria-label="Luksusowy budynek ośrodka My Way w Kąpinie"></div>
+        </div>
+    </section>
+
+    <h3 class="section-title">Pozostałe Ośrodki w Polsce</h3>
+
+    <section class="catalog-grid">
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Dolnośląskie</span></div>
+            <h3>Nowa Droga</h3>
+            <div class="info-row"><span>📍</span> ul. Zielna 40, 51-313 Wrocław</div>
+            <div class="info-row"><span>📞</span> +48 795 589 872</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Nowa+Droga+ośrodek+terapii+Wrocław" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Kujawsko-Pom.</span></div>
+            <h3>Ośrodek Spichlerz</h3>
+            <div class="info-row"><span>📍</span> Dyblin 1A, 87-610 Dobrzyń nad Wisłą</div>
+            <div class="info-row"><span>📞</span> +48 884 916 008</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Spichlerz+Dobrzyń+nad+Wisłą" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Lubelskie</span></div>
+            <h3>Zielona Klinika</h3>
+            <div class="info-row"><span>📍</span> Uniszowice 57G, 21-030 Motycz</div>
+            <div class="info-row"><span>📞</span> +48 723 338 337</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Zielona+Klinika+Uniszowice" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Lubuskie</span></div>
+            <h3>MCLU "Teresa Wagner"</h3>
+            <div class="info-row"><span>📍</span> ul. Poznańska 109, 66-300 Międzyrzecz</div>
+            <div class="info-row"><span>📞</span> +48 95 742 87 56</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=MCLU+Teresa+Wagner+Międzyrzecz" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Łódzkie</span></div>
+            <h3>Klinika Patromed</h3>
+            <div class="info-row"><span>📍</span> ul. Trębacka 38, 93-367 Łódź</div>
+            <div class="info-row"><span>📞</span> +48 660 254 050</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Klinika+Patromed+Łódź" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Małopolskie</span></div>
+            <h3>TU i TERAZ</h3>
+            <div class="info-row"><span>📍</span> ul. Zakamycze 37A, 30-240 Kraków</div>
+            <div class="info-row"><span>📞</span> +48 669 969 209</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+TU+i+TERAZ+Kraków" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Mazowieckie</span></div>
+            <h3>Vita Nova</h3>
+            <div class="info-row"><span>📍</span> ul. Szpitalna 16A, 05-270 Marki</div>
+            <div class="info-row"><span>📞</span> +48 572 905 999</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Vita+Nova+Marki+leczenie+uzależnień" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Opolskie</span></div>
+            <h3>OPM-MED</h3>
+            <div class="info-row"><span>📍</span> ul. Jagiełły 8A, 45-920 Opole</div>
+            <div class="info-row"><span>📞</span> +48 882 597 992</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=OPM-MED+Opole" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Podkarpackie</span></div>
+            <h3>Iwonicz-Zdrój</h3>
+            <div class="info-row"><span>📍</span> ul. Piwarskiego 26, 38-440 Iwonicz-Zdrój</div>
+            <div class="info-row"><span>📞</span> +48 517 060 303</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Prywatny+Ośrodek+Terapii+Iwonicz+Zdrój" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Podlaskie</span></div>
+            <h3>Virtus</h3>
+            <div class="info-row"><span>📍</span> ul. Antoniuk Fabryczny 10/1, Białystok</div>
+            <div class="info-row"><span>📞</span> +48 698 335 897</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Virtus+Białystok" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Śląskie</span></div>
+            <h3>Ośrodek ARKA</h3>
+            <div class="info-row"><span>📍</span> ul. Spacerowa 4, 43-460 Wisła</div>
+            <div class="info-row"><span>📞</span> +48 783 218 321</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Prywatny+Ośrodek+ARKA+Wisła" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Świętokrzyskie</span></div>
+            <h3>NASZ DOM</h3>
+            <div class="info-row"><span>📍</span> ul. Silniczna 11, 26-001 Dąbrowa</div>
+            <div class="info-row"><span>📞</span> +48 698 323 698</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+NASZ+DOM+Dąbrowa" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Warm-Maz.</span></div>
+            <h3>In Puris</h3>
+            <div class="info-row"><span>📍</span> Huta Żuławska 10A, 82-316 Milejowo</div>
+            <div class="info-row"><span>📞</span> +48 602 330 352</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+In+Puris+Milejowo" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Wielkopolskie</span></div>
+            <h3>AGNUS</h3>
+            <div class="info-row"><span>📍</span> Aleja Stachury 2, 60-461 Poznań</div>
+            <div class="info-row"><span>📞</span> +48 533 221 555</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Ośrodek+Agnus+Poznań" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="tag-voivodeship">Zachodniopom.</span></div>
+            <h3>Centrum ANON</h3>
+            <div class="info-row"><span>📍</span> ul. Pocztowa 13, 72-100 Goleniów</div>
+            <div class="info-row"><span>📞</span> +48 91 407 18 10</div>
+            <div class="card-footer">
+                <a href="https://www.google.com/search?q=Centrum+ANON+Goleniów" target="_blank" class="btn-card-visit">Zobacz więcej</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="seo-faq-container">
+        
+        <section class="seo-block">
+            <h2>Dlaczego warto wybrać prywatny ośrodek terapii?</h2>
+            <p>
+                Wybór odpowiedniego miejsca leczenia to pierwszy i najważniejszy krok na drodze do zdrowienia. Prywatne ośrodki leczenia uzależnień w Polsce oferują standardy, które często przewyższają placówki publiczne. Kluczowe zalety to przede wszystkim <strong>pełna anonimowość</strong> i dyskrecja, co jest priorytetem dla wielu pacjentów oraz ich rodzin.
+            </p>
+            <p>
+                Dodatkowo, ośrodki prywatne takie jak <strong>My Way w Kąpinie</strong> zapewniają intensywną, zindywidualizowaną terapię. Mniejsze grupy terapeutyczne, codzienna dostępność specjalistów oraz komfortowe warunki pobytu (przypominające standard hotelowy) znacząco wpływają na efektywność procesu terapeutycznego. Otoczenie natury, z dala od miejskiego zgiełku, pozwala na głębokie wyciszenie i skupienie się na pracy nad sobą.
+            </p>
+        </section>
+
+        <section class="faq-section">
+            <h2 style="margin-bottom: 25px; color: var(--text-main);">Najczęściej Zadawane Pytania (FAQ)</h2>
+            
+            <details class="faq-item">
+                <summary>Jak wygląda proces przyjęcia do ośrodka?</summary>
+                <p>Proces jest maksymalnie uproszczony. Wystarczy kontakt telefoniczny w celu ustalenia terminu. W większości prywatnych ośrodków nie jest wymagane skierowanie lekarskie. Podczas rozmowy wstępnej przeprowadzany jest krótki wywiad, aby dopasować odpowiednią formę pomocy.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Czy pobyt w ośrodku jest w pełni anonimowy?</summary>
+                <p>Tak, dyskrecja to podstawa działalności prywatnych placówek. Ośrodki nie mają obowiązku zgłaszania pacjentów do systemów centralnych, a dane osobowe są chronione najwyższymi procedurami bezpieczeństwa. Twój pracodawca ani otoczenie nie muszą wiedzieć o terapii.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Ile trwa terapia stacjonarna?</summary>
+                <p>Standardowy turnus terapeutyczny trwa zazwyczaj od 4 do 8 tygodni. Jest to czas niezbędny do przerwania ciągu, detoksykacji organizmu oraz nabycia podstawowych umiejętności radzenia sobie z nałogiem. Długość pobytu może być jednak dostosowana indywidualnie do potrzeb pacjenta.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Czy mogę korzystać z telefonu i laptopa?</summary>
+                <p>Zasady różnią się w zależności od ośrodka. W My Way dbamy o balans – kontakt ze światem jest możliwy, jednak zalecamy jego ograniczenie, aby w pełni skupić się na procesie terapeutycznym. Sprzęt elektroniczny jest zazwyczaj udostępniany w wyznaczonych godzinach.</p>
+            </details>
+
+             <details class="faq-item">
+                <summary>Jakie metody leczenia są stosowane?</summary>
+                <p>Wykorzystujemy sprawdzone, naukowo potwierdzone metody terapii uzależnień, w tym terapię poznawczo-behawioralną, warsztaty umiejętności, treningi asertywności oraz techniki relaksacyjne. Całość dopełnia opieka medyczna i farmakologiczna (w razie potrzeby).</p>
+            </details>
+        </section>
+
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <h2>Zgłoś ośrodek</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-weight: 400;">Wypełnij dane, aby dodać placówkę.</p>
+            <form id="centerForm">
+                <div class="form-group">
+                    <label>Nazwa</label>
+                    <input type="text" required>
                 </div>
-                <a href="http://osrodek-myway.pl" target="_blank" class="btn-main">Zobacz Ośrodek</a>
-            </div>
-            <div class="premium-image" role="img" aria-label="Luksusowy budynek MyWay"></div>
-        </div>
-    </section>
-
-    <section class="catalog-section">
-        <div class="section-header">
-            <h3>Pozostałe lokalizacje</h3>
-            <span style="font-size: 0.9rem; color: var(--text-light)">Zweryfikowane placówki</span>
-        </div>
-
-        <div class="grid-container" id="catalogGrid">
-            
-            <div class="card" data-search="dolnośląskie wrocław nowa droga">
-                <span class="card-tag">Dolnośląskie</span>
-                <h3>Nowa Droga</h3>
-                <div class="card-info"><i>📍</i> ul. Zielna 40, Wrocław</div>
-                <div class="card-info"><i>📞</i> +48 795 589 872</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Nowa+Droga+Wrocław" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="kujawsko-pomorskie dobrzyń spichlerz">
-                <span class="card-tag">Kujawsko-Pom.</span>
-                <h3>Spichlerz</h3>
-                <div class="card-info"><i>📍</i> Dyblin 1A, Dobrzyń n. Wisłą</div>
-                <div class="card-info"><i>📞</i> +48 884 916 008</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Spichlerz+Dobrzyń" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="lubelskie lublin motycz zielona klinika">
-                <span class="card-tag">Lubelskie</span>
-                <h3>Zielona Klinika</h3>
-                <div class="card-info"><i>📍</i> Uniszowice 57G, Motycz</div>
-                <div class="card-info"><i>📞</i> +48 723 338 337</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Zielona+Klinika+Lublin" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="lubuskie międzyrzecz teresa wagner">
-                <span class="card-tag">Lubuskie</span>
-                <h3>MCLU "Teresa Wagner"</h3>
-                <div class="card-info"><i>📍</i> ul. Poznańska 109, Międzyrzecz</div>
-                <div class="card-info"><i>📞</i> +48 95 742 87 56</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=MCLU+Teresa+Wagner" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="łódzkie łódź patromed">
-                <span class="card-tag">Łódzkie</span>
-                <h3>Klinika Patromed</h3>
-                <div class="card-info"><i>📍</i> ul. Trębacka 38, Łódź</div>
-                <div class="card-info"><i>📞</i> +48 660 254 050</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Klinika+Patromed" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="małopolskie kraków tu i teraz">
-                <span class="card-tag">Małopolskie</span>
-                <h3>TU i TERAZ</h3>
-                <div class="card-info"><i>📍</i> ul. Zakamycze 37A, Kraków</div>
-                <div class="card-info"><i>📞</i> +48 669 969 209</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Tu+i+Teraz+Kraków" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="mazowieckie marki warszawa vita nova">
-                <span class="card-tag">Mazowieckie</span>
-                <h3>Vita Nova</h3>
-                <div class="card-info"><i>📍</i> ul. Szpitalna 16A, Marki</div>
-                <div class="card-info"><i>📞</i> +48 572 905 999</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Vita+Nova+Marki" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="opolskie opole opm med">
-                <span class="card-tag">Opolskie</span>
-                <h3>OPM-MED</h3>
-                <div class="card-info"><i>📍</i> ul. Jagiełły 8A, Opole</div>
-                <div class="card-info"><i>📞</i> +48 882 597 992</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=OPM+MED+Opole" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="podkarpackie iwonicz zdrój">
-                <span class="card-tag">Podkarpackie</span>
-                <h3>Iwonicz-Zdrój</h3>
-                <div class="card-info"><i>📍</i> ul. Piwarskiego 26, Iwonicz</div>
-                <div class="card-info"><i>📞</i> +48 517 060 303</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Ośrodek+Iwonicz+Zdrój" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-            
-             <div class="card" data-search="podlaskie białystok virtus">
-                <span class="card-tag">Podlaskie</span>
-                <h3>Virtus</h3>
-                <div class="card-info"><i>📍</i> ul. Antoniuk 10/1, Białystok</div>
-                <div class="card-info"><i>📞</i> +48 698 335 897</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Virtus+Białystok" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-             <div class="card" data-search="śląskie wisła arka">
-                <span class="card-tag">Śląskie</span>
-                <h3>Ośrodek ARKA</h3>
-                <div class="card-info"><i>📍</i> ul. Spacerowa 4, Wisła</div>
-                <div class="card-info"><i>📞</i> +48 783 218 321</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Arka+Wisła" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-            <div class="card" data-search="świętokrzyskie kielce dąbrowa nasz dom">
-                <span class="card-tag">Świętokrzyskie</span>
-                <h3>NASZ DOM</h3>
-                <div class="card-info"><i>📍</i> ul. Silniczna 11, Dąbrowa</div>
-                <div class="card-info"><i>📞</i> +48 698 323 698</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Nasz+Dom+Dąbrowa" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-             <div class="card" data-search="warmińsko mazurskie milejowo in puris">
-                <span class="card-tag">Warm-Maz.</span>
-                <h3>In Puris</h3>
-                <div class="card-info"><i>📍</i> Huta Żuławska 10A, Milejowo</div>
-                <div class="card-info"><i>📞</i> +48 602 330 352</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=In+Puris+Milejowo" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-
-             <div class="card" data-search="wielkopolskie poznań agnus">
-                <span class="card-tag">Wielkopolskie</span>
-                <h3>AGNUS</h3>
-                <div class="card-info"><i>📍</i> Aleja Stachury 2, Poznań</div>
-                <div class="card-info"><i>📞</i> +48 533 221 555</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Agnus+Poznań" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-            
-             <div class="card" data-search="zachodniopomorskie goleniów anon">
-                <span class="card-tag">Zachodniopom.</span>
-                <h3>Centrum ANON</h3>
-                <div class="card-info"><i>📍</i> ul. Pocztowa 13, Goleniów</div>
-                <div class="card-info"><i>📞</i> +48 91 407 18 10</div>
-                <div class="btn-card"><a href="https://www.google.com/search?q=Anon+Goleniów" target="_blank">Więcej informacji &rarr;</a></div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section class="content-area">
-        <div class="seo-text">
-            <h2>Dlaczego wybrać prywatny ośrodek?</h2>
-            <p>Decyzja o podjęciu terapii to moment zwrotny. Prywatne ośrodki w Polsce oferują standardy, które pozwalają przejść ten proces z godnością, w pełnej dyskrecji. Wybierając placówki rekomendowane w naszym katalogu, zyskujesz pewność co do jakości opieki medycznej i terapeutycznej.</p>
-        </div>
-
-        <div class="faq-box">
-            <details>
-                <summary>Ile trwa terapia?</summary>
-                <p>Standardowy cykl trwa od 4 do 8 tygodni. Jest to czas niezbędny na detoks i naukę mechanizmów radzenia sobie z nałogiem.</p>
-            </details>
-            <details>
-                <summary>Czy pobyt jest anonimowy?</summary>
-                <p>Tak. Prywatne ośrodki nie raportują pacjentów do systemów publicznych. Twoja obecność jest ściśle chroniona tajemnicą.</p>
-            </details>
-            <details>
-                <summary>Jaki jest koszt?</summary>
-                <p>Ceny wahają się od 6 000 zł do 25 000 zł za miesiąc, w zależności od standardu zakwaterowania i intensywności terapii.</p>
-            </details>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Katalog Premium. <br> <span style="color: var(--primary)">kontakt@osrodek-myway.pl</span></p>
-    </footer>
-
-    <div class="modal-overlay" id="modal">
-        <div class="modal-box">
-            <h2 style="margin-bottom: 20px;">Zgłoś Placówkę</h2>
-            <form id="addForm">
-                <input type="text" class="form-input" placeholder="Nazwa ośrodka" required>
-                <input type="text" class="form-input" placeholder="Województwo" required>
-                <input type="text" class="form-input" placeholder="Telefon" required>
-                <button type="submit" class="btn-main" style="width: 100%;">Wyślij Zgłoszenie</button>
-                <button type="button" onclick="closeModal()" style="width: 100%; background: transparent; color: #999; border: none; margin-top: 10px; cursor: pointer;">Anuluj</button>
+                <div class="form-group">
+                    <label>Województwo</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Adres</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" required>
+                </div>
+                <button type="submit" class="submit-btn">Wyślij zgłoszenie</button>
             </form>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2024 Katalog Ośrodków. Wszelkie prawa zastrzeżone.</p>
+        <p style="margin-top: 10px; color: var(--accent); font-weight: 600;">kontakt@osrodek-myway.pl</p>
+    </footer>
+
     <script>
-        // Modal Logic
-        const modal = document.getElementById('modal');
-        function openModal() { modal.classList.add('active'); }
-        function closeModal() { modal.classList.remove('active'); }
-        
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) closeModal();
-        });
+        // Pobieranie elementów
+        const modalOverlay = document.getElementById('modalOverlay');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const centerForm = document.getElementById('centerForm');
 
-        document.getElementById('addForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Dziękujemy! Zgłoszenie przyjęte.');
-            closeModal();
-        });
-
-        // SEARCH FILTER LOGIC
-        function filterCenters() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
-            
-            cards.forEach(card => {
-                let searchData = card.getAttribute('data-search');
-                if (searchData.includes(input)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
+        // Funkcje otwierania/zamykania
+        function openModal() {
+            modalOverlay.classList.add('active');
         }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        // Event Listeners
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Zamykanie po kliknięciu w tło (overlay)
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Obsługa formularza
+        centerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Wysłano pomyślnie!";
+            btn.style.background = "#4ade80"; // Zielony kolor sukcesu
+            btn.style.color = "#ffffff";
+
+            setTimeout(() => {
+                closeModal();
+                btn.innerText = originalText;
+                btn.style.background = "var(--accent)";
+                this.reset();
+            }, 2000);
+        });
     </script>
 </body>
 </html>
