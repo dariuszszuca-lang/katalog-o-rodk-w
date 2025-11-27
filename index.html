@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Prywatne Ośrodki Leczenia Uzależnień - Katalog Premium 2025 | My Way</title>
-    <meta name="description" content="Ranking prywatnych ośrodków leczenia uzależnień. Zrób test i dobierz ośrodek. Rekomendacja: Ośrodek My Way (Kąpino). Kompleksowa terapia i detoks.">
+    <meta name="description" content="Ranking prywatnych ośrodków leczenia uzależnień. Zrób test i dobierz ośrodek. Rekomendacja: Ośrodek My Way (Kąpino).">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,10 @@
     <style>
         :root {
             /* Paleta Dark Luxury */
-            --bg-body: #0a0b0e; /* Bardzo ciemne tło */
-            --bg-card-dark: #13151a; /* Ciemne tło dla elementów premium */
-            --bg-card-light: rgba(255, 255, 255, 0.07); /* NOWE: Jaśniejsze, półprzezroczyste tło dla zwykłych kart */
+            --bg-body: #0a0b0e;
+            --bg-card-dark: #13151a;
+            /* Jaśniejsze, szklane tło dla kart standardowych */
+            --bg-card-light: rgba(255, 255, 255, 0.03); 
             
             /* Złoto */
             --gold-start: #d4af37;
@@ -24,13 +25,14 @@
             --gold-text: #e5c567;
             
             --text-main: #f0f0f0;
-            --text-muted: #aab2c0; /* Lekko jaśniejszy szary dla lepszego kontrastu */
+            --text-muted: #aab2c0;
             
-            --border-subtle: rgba(255, 255, 255, 0.1);
-            --border-gold: rgba(212, 175, 55, 0.4);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(212, 175, 55, 0.5);
             
             /* UI Elements */
-            --glass-blur: blur(12px);
+            --glass-blur: blur(20px);
+            --neon-glow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         * {
@@ -46,7 +48,7 @@
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
                 radial-gradient(circle at 80% 90%, rgba(40, 50, 70, 0.2) 0%, transparent 40%);
             min-height: 100vh;
         }
@@ -72,18 +74,29 @@
             transform: translateY(0);
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER WOW (NEW STYLE) --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(10, 11, 14, 0.85);
+            padding: 15px 5%;
+            /* Szklany, ciemny pasek */
+            background: rgba(5, 6, 8, 0.7);
             backdrop-filter: var(--glass-blur);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        /* Złota linia na dole menu */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-start), transparent);
+            opacity: 0.5;
         }
 
         .logo {
@@ -92,57 +105,83 @@
             gap: 15px;
             text-decoration: none;
             color: var(--text-main);
+            position: relative;
         }
 
         .logo-symbol {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); /* Mocniejszy blask */
+            animation: pulseLogo 3s infinite;
+        }
+        
+        @keyframes pulseLogo {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.3); box-shadow: 0 0 35px rgba(212, 175, 55, 0.8); }
+            100% { filter: brightness(1); }
         }
 
-        .logo-text { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
-        .logo-text span { display: block; font-size: 0.7rem; color: var(--gold-start); letter-spacing: 4px; }
+        .logo-text { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1; font-weight: 700; }
+        .logo-text span { display: block; font-size: 0.6rem; color: var(--gold-start); letter-spacing: 5px; margin-top: 3px; }
 
-        .contact-bar { display: flex; gap: 25px; align-items: center; }
-        .contact-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: 0.3s; }
-        .contact-link:hover { color: var(--gold-text); }
+        .contact-bar { display: flex; gap: 30px; align-items: center; }
+        
+        .contact-link { 
+            text-decoration: none; 
+            color: #d1d5db; 
+            font-size: 0.85rem; 
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .contact-link:hover { color: var(--gold-text); text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
 
-        .btn-gold-outline {
-            padding: 10px 24px;
-            background: transparent;
+        /* Nowy przycisk w menu */
+        .btn-header-glow {
+            padding: 10px 25px;
+            background: rgba(212, 175, 55, 0.1);
             border: 1px solid var(--gold-start);
             color: var(--gold-text);
             text-transform: uppercase;
             font-size: 0.75rem;
             font-weight: 700;
+            border-radius: 4px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
         }
-        .btn-gold-outline:hover { background: var(--gold-start); color: #000; box-shadow: 0 0 20px rgba(212,175,55,0.2); }
+        
+        .btn-header-glow:hover {
+            background: var(--gold-start);
+            color: #000;
+            box-shadow: 0 0 25px var(--gold-start);
+        }
 
         /* --- HERO & CONCIERGE --- */
         .hero {
             text-align: center;
-            padding: 110px 20px 70px;
+            padding: 120px 20px 70px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .hero h1 { font-size: 3.8rem; line-height: 1.15; margin-bottom: 25px; color: #fff; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; font-weight: 300; }
 
         .btn-concierge {
             background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
             color: #0b0d10;
-            padding: 18px 40px;
+            padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -152,7 +191,7 @@
             font-size: 1rem;
             animation: pulse 2s infinite;
         }
-        .btn-concierge:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.5); }
+        .btn-concierge:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(212, 175, 55, 0.6); }
         
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
@@ -160,19 +199,33 @@
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-        /* --- SEARCH --- */
-        .search-container { max-width: 550px; margin: 60px auto 40px; }
+        /* --- SEARCH BAR (WOW STYLE) --- */
+        .search-container { max-width: 600px; margin: 60px auto 40px; position: relative; }
+        
         .search-box {
-            background: rgba(255,255,255,0.07);
-            border: 1px solid var(--border-subtle);
+            background: rgba(19, 21, 26, 0.6); /* Ciemniejsze tło */
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 50px;
             display: flex;
             align-items: center;
-            padding: 8px 25px;
-            backdrop-filter: var(--glass-blur);
+            padding: 10px 30px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .search-input { width: 100%; background: transparent; border: none; color: #fff; padding: 12px 0; outline: none; font-size: 1rem; }
-        .search-icon { font-size: 1.2rem; color: var(--gold-text); margin-right: 15px; }
+        
+        /* EFEKT PODŚWIETLENIA (ILLUMINATED) */
+        .search-box:focus-within {
+            border-color: var(--gold-start);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.1);
+            transform: scale(1.03);
+            background: rgba(19, 21, 26, 0.9);
+        }
+
+        .search-input { width: 100%; background: transparent; border: none; color: #fff; padding: 15px 0; outline: none; font-size: 1.1rem; }
+        .search-input::placeholder { color: rgba(255,255,255,0.3); font-weight: 300; }
+        .search-icon { font-size: 1.4rem; color: var(--gold-text); margin-right: 20px; text-shadow: 0 0 10px var(--gold-start); }
+
 
         /* --- QUIZ SECTION --- */
         .quiz-section {
@@ -232,6 +285,7 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.6);
             position: relative;
             overflow: hidden;
+            border-radius: 12px;
         }
         .card-premium::before { content: ''; position: absolute; top:0; left:0; width:100%; height:3px; background: linear-gradient(90deg, transparent, var(--gold-start), transparent); animation: shine 4s infinite; }
         @keyframes shine { 0% {transform: translateX(-100%)} 100% {transform: translateX(100%)}}
@@ -254,10 +308,9 @@
 
         .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto 120px; padding: 0 20px; }
         
-        /* ZMIANA: Rozjaśnione kafelki standardowe */
         .card {
-            background: var(--bg-card-light); /* Jaśniejsze, półprzezroczyste tło */
-            backdrop-filter: var(--glass-blur); /* Efekt szkła */
+            background: var(--bg-card-light); /* Rozjaśnione, szklane tło */
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-subtle);
             padding: 35px;
             transition: 0.4s;
@@ -269,11 +322,11 @@
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--gold-start);
-            background: rgba(255, 255, 255, 0.1); /* Jeszcze jaśniejsze po najechaniu */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
         
-        .tag-voivodeship { position: absolute; top: 25px; right: 25px; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 5px 10px; background: rgba(0,0,0,0.2); }
+        .tag-voivodeship { position: absolute; top: 25px; right: 25px; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 5px 10px; background: rgba(0,0,0,0.3); }
         .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; margin-top: 10px; }
         .card-info { display: flex; gap: 12px; margin-bottom: 10px; color: var(--text-muted); font-size: 0.95rem; }
         .card-footer { margin-top: auto; padding-top: 25px; border-top: 1px solid var(--border-subtle); }
@@ -290,7 +343,7 @@
             transition: 0.3s;
             cursor: pointer;
             position: relative;
-            backdrop-filter: var(--glass-blur);
+            backdrop-filter: blur(10px);
         }
         .edu-card:hover { border-color: var(--gold-start); background: rgba(255,255,255,0.06); transform: translateY(-5px); }
         .edu-icon { font-size: 2rem; color: var(--gold-start); margin-bottom: 15px; }
@@ -361,6 +414,7 @@
             .hero h1 { font-size: 2.8rem; }
             header { flex-direction: column; gap: 20px; }
             .quiz-options { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -373,7 +427,8 @@
         </a>
         <div class="contact-bar">
             <a href="tel:731395295" class="contact-link">731 395 295</a>
-            <button class="btn-gold-outline" onclick="openModal('modalAdd')">+ Zgłoś Ośrodek</button>
+            <a href="mailto:kontakt@osrodek-myway.pl" class="contact-link">kontakt@osrodek-myway.pl</a>
+            <button class="btn-header-glow" onclick="openModal('modalAdd')">+ Zgłoś Ośrodek</button>
         </div>
     </header>
 
