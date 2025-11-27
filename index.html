@@ -252,7 +252,7 @@
         .btn-premium:hover { box-shadow: 0 0 40px rgba(212,175,55,0.5); }
         .premium-visual { background-image: url('5.jpg'); background-size: cover; background-position: center; min-height: 500px; position: relative; filter: saturate(0.8) contrast(1.1); }
 
-        /* Przycisk Concierge (przeniesiony pod kartę) */
+        /* Przycisk Concierge (pod kartą) */
         .concierge-wrapper {
             text-align: center;
             margin-top: 50px;
@@ -319,7 +319,7 @@
 
         /* --- EDUCATIONAL GRID --- */
         .edu-section { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; }
-        .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; } /* Zmieniono minmax dla lepszego układu */
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
         .edu-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid var(--border-subtle);
@@ -477,6 +477,7 @@
                 </div>
 
                 <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Na podstawie Twoich odpowiedzi.</p>
+                <button class="btn-concierge" style="margin-top: 20px; font-size: 0.8rem; padding: 12px 25px;" onclick="openModal('modalConcierge')">Umów konsultację</button>
             </div>
         </div>
     </section>
@@ -629,7 +630,7 @@
                 <h4>Jak wybrać ośrodek?</h4>
                 <p>Sprawdź, co jest kluczowe przy podejmowaniu decyzji.</p>
                 <div class="edu-content">
-                    Zwróć uwagę na kwalifikacje kadry, dostępność opieki medycznej oraz opinie. Ważne jest, aby ośrodek oferował zindywidualizowany plan terapii.
+                    Zwróć uwagę na kwalifikacje kadry (certyfikowani terapeuci), dostępność opieki medycznej oraz opinie byłych pacjentów. Ważne jest, aby ośrodek oferował zindywidualizowany plan terapii, a nie tylko grupowe zajęcia.
                 </div>
             </div>
 
@@ -638,7 +639,7 @@
                 <h4>Na co uważać?</h4>
                 <p>Czerwone flagi, które powinny Cię zaniepokoić.</p>
                 <div class="edu-content">
-                    Unikaj miejsc, które gwarantują 100% skuteczności lub nie pozwalają na odwiedziny.
+                    Unikaj miejsc, które gwarantują 100% skuteczności (terapia to proces), nie pozwalają na odwiedziny (po okresie aklimatyzacji) lub mają podejrzanie niską cenę w porównaniu do standardu rynkowego.
                 </div>
             </div>
 
@@ -647,7 +648,7 @@
                 <h4>Co zabrać ze sobą?</h4>
                 <p>Lista niezbędnych rzeczy na pobyt stacjonarny.</p>
                 <div class="edu-content">
-                    Wygodne ubrania, środki higieny, dokumentację medyczną. Zazwyczaj zakazane są urządzenia z internetem.
+                    Wygodne ubrania, środki higieny osobistej, dokumentację medyczną oraz leki przyjmowane na stałe. Warto zabrać książki. Zazwyczaj zakazane są urządzenia z dostępem do internetu (zależy od ośrodka) oraz produkty zawierające alkohol.
                 </div>
             </div>
 
@@ -656,7 +657,7 @@
                 <h4>Detoks a Terapia</h4>
                 <p>Czym różnią się te dwa etapy leczenia?</p>
                 <div class="edu-content">
-                    Detoks to oczyszczanie organizmu. Terapia to praca psychologiczna. Sam detoks rzadko wystarcza.
+                    Detoks to proces medyczny oczyszczania organizmu z toksyn (trwa ok. 7-10 dni). Terapia to praca psychologiczna nad mechanizmami uzależnienia. Sam detoks bez terapii rzadko prowadzi do trwałej trzeźwości.
                 </div>
             </div>
 
@@ -723,10 +724,11 @@
             <button class="close-modal" onclick="closeModal('modalAdd')">&times;</button>
             <h2>Zgłoś ośrodek</h2>
             <p>Dołącz do bazy najlepszych placówek w Polsce.</p>
-            <form onsubmit="handleForm(event, 'modalAdd')">
-                <div class="input-row"><label>Nazwa Ośrodka</label><input type="text" required></div>
-                <div class="input-row"><label>Miasto</label><input type="text" required></div>
-                <div class="input-row"><label>Telefon</label><input type="text" required></div>
+            <form action="https://formsubmit.co/kontakt@osrodek-myway.pl" method="POST" id="formAdd">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="input-row"><label>Nazwa Ośrodka</label><input type="text" name="nazwa_osrodka" required></div>
+                <div class="input-row"><label>Miasto</label><input type="text" name="miasto" required></div>
+                <div class="input-row"><label>Telefon</label><input type="text" name="telefon" required></div>
                 <button type="submit" class="btn-submit">Wyślij Zgłoszenie</button>
             </form>
         </div>
@@ -737,14 +739,15 @@
             <button class="close-modal" onclick="closeModal('modalConcierge')">&times;</button>
             <h2 class="gold-text">Usługa Concierge</h2>
             <p>Wypełnij formularz. Nasz ekspert oddzwoni i dobierze dyskretnie najlepszą placówkę.</p>
-            <form onsubmit="handleForm(event, 'modalConcierge')">
+            <form action="https://formsubmit.co/kontakt@osrodek-myway.pl" method="POST" id="formConcierge">
+                <input type="hidden" name="_captcha" value="false">
                 <div class="input-row"><label>Dla kogo szukasz pomocy?</label>
-                    <select style="width:100%; background:#0a0b0e; border:1px solid var(--border-subtle); padding:15px; color:#fff;">
+                    <select name="dla_kogo" style="width:100%; background:#0a0b0e; border:1px solid var(--border-subtle); padding:15px; color:#fff;">
                         <option>Dla siebie</option>
                         <option>Dla bliskiej osoby</option>
                     </select>
                 </div>
-                <div class="input-row"><label>Numer telefonu</label><input type="text" placeholder="+48..." required></div>
+                <div class="input-row"><label>Numer telefonu</label><input type="text" name="telefon_kontaktowy" placeholder="+48..." required></div>
                 <button type="submit" class="btn-submit">Zamów konsultację</button>
             </form>
         </div>
@@ -816,23 +819,50 @@
             }
         }
 
-        function handleForm(e, modalId) {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            
-            btn.innerText = "Wysyłanie...";
-            btn.style.background = "#4ade80"; // green
-            
-            setTimeout(() => {
-                closeModal(modalId);
-                btn.innerText = originalText;
-                btn.style.background = "linear-gradient(90deg, var(--gold-start), var(--gold-end))";
-                form.reset();
-                alert("Dziękujemy. Zgłoszenie przyjęte.");
-            }, 1500);
-        }
+        // --- FORM HANDLING (AJAX) ---
+        // Ta funkcja obsługuje oba formularze (Zgłoś Ośrodek + Concierge)
+        // i wysyła je do Formsubmit w tle bez przeładowania strony.
+        
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalText = btn.innerText;
+                
+                btn.innerText = "Wysyłanie...";
+                btn.style.background = "#4ade80"; // Zielony
+                btn.style.color = "#000";
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Sukces
+                        setTimeout(() => {
+                            btn.innerText = "Wysłano pomyślnie!";
+                            setTimeout(() => {
+                                // Zamknij modal i zresetuj
+                                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+                                btn.innerText = originalText;
+                                btn.style.background = "linear-gradient(90deg, var(--gold-start), var(--gold-end))";
+                                form.reset();
+                            }, 1000);
+                        }, 500);
+                    } else {
+                        // Błąd
+                        alert("Wystąpił błąd przy wysyłaniu. Spróbuj ponownie.");
+                        btn.innerText = originalText;
+                    }
+                }).catch(error => {
+                    alert("Błąd połączenia.");
+                    btn.innerText = originalText;
+                });
+            });
+        });
     </script>
 </body>
 </html>
