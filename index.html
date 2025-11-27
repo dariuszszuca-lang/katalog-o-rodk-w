@@ -13,14 +13,12 @@
     
     <style>
         :root {
-            /* PRZYWRÓCONA PALETA (Midnight Luxury) - nie za ciemna */
+            /* PALETA DARK LUXURY */
             --bg-body: #0a0b0e; 
             --bg-card-dark: #13151a;
-            
-            /* Jaśniejsze tło dla kafelków (tak jak chciałeś) */
             --bg-card-light: rgba(255, 255, 255, 0.05); 
             
-            /* Złoto */
+            /* ZŁOTO */
             --gold-start: #d4af37;
             --gold-end: #aa8420;
             --gold-text: #e5c567;
@@ -46,7 +44,6 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             overflow-x: hidden;
-            /* PRZYWRÓCONE TŁO (Cieplejsze światło) */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(60, 70, 90, 0.2) 0%, transparent 40%);
@@ -74,7 +71,7 @@
             transform: translateY(0);
         }
 
-        /* --- MENU: FLOATING ISLAND (Z poprawioną nazwą) --- */
+        /* --- MENU: FLOATING ISLAND Z WYSZUKIWARKĄ --- */
         .nav-island-container {
             position: fixed;
             top: 25px;
@@ -88,15 +85,15 @@
 
         .nav-island {
             pointer-events: all;
-            background: rgba(15, 15, 15, 0.85); /* Nieco mniej przezroczyste dla czytelności */
+            background: rgba(15, 15, 15, 0.9);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 50px;
-            padding: 12px 15px 12px 30px;
+            padding: 10px 15px 10px 25px;
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
             animation: slideDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
             max-width: 95%;
@@ -113,56 +110,51 @@
             gap: 12px;
             text-decoration: none;
             color: #fff;
+            white-space: nowrap;
         }
         .logo-icon {
-            width: 28px; height: 28px;
+            width: 24px; height: 24px;
             background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
             transform: rotate(45deg);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
-        /* PRZYWRÓCONA PEŁNA NAZWA I STYL */
-        .logo-text {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-        .logo-text span {
-            display: block;
-            font-size: 0.65rem;
-            color: var(--gold-start);
-            letter-spacing: 3px;
-        }
+        .logo-text { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        /* Wyszukiwarka w menu */
+        .nav-search {
+            position: relative;
+            width: 250px;
         }
-
-        .icon-btn {
-            width: 42px; height: 42px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(255,255,255,0.08);
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1rem;
+        .nav-search input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 8px 15px 8px 35px;
+            color: #fff;
+            font-size: 0.85rem;
+            outline: none;
             transition: 0.3s;
-            border: 1px solid transparent;
         }
-        .icon-btn:hover {
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold-start);
-            border-color: rgba(212, 175, 55, 0.3);
+        .nav-search input:focus {
+            background: rgba(0,0,0,0.5);
+            border-color: var(--gold-start);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        .nav-search::before {
+            content: '🔍';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
 
         .btn-island-cta {
             background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
             color: #000;
-            padding: 12px 25px;
+            padding: 8px 20px;
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 800;
@@ -173,73 +165,18 @@
             transition: 0.3s;
             white-space: nowrap;
         }
-        .btn-island-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-        }
+        .btn-island-cta:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
 
-        /* --- HERO & CONCIERGE --- */
+        /* --- HERO --- */
         .hero {
             text-align: center;
-            padding: 180px 20px 80px;
+            padding: 180px 20px 60px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; color: #fff; letter-spacing: -1px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .hero p { color: var(--text-muted); font-size: 1.25rem; margin-bottom: 50px; font-weight: 300; }
-
-        .btn-concierge {
-            background: transparent;
-            border: 1px solid var(--gold-start);
-            color: var(--gold-start);
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: 0.4s;
-            cursor: pointer;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-concierge:hover {
-            background: var(--gold-start);
-            color: #000;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
-        }
-
-        /* --- NEON SEARCH BAR --- */
-        .search-container { max-width: 600px; margin: 60px auto 40px; position: relative; perspective: 1000px; }
-        
-        .search-box {
-            background: rgba(20, 20, 25, 0.6);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            padding: 15px 25px;
-            backdrop-filter: blur(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        
-        .search-box:focus-within {
-            border-color: var(--gold-start);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2), inset 0 0 10px rgba(212, 175, 55, 0.05);
-            transform: translateY(-5px) scale(1.01);
-            background: rgba(20, 20, 25, 0.9);
-        }
-
-        .search-input { width: 100%; background: transparent; border: none; color: #fff; padding: 5px 0; outline: none; font-size: 1.1rem; }
-        .search-input::placeholder { color: rgba(255,255,255,0.3); font-weight: 300; }
-        .search-icon { font-size: 1.4rem; color: var(--gold-text); margin-right: 20px; text-shadow: 0 0 15px var(--gold-start); }
-
+        .hero p { color: var(--text-muted); font-size: 1.25rem; margin-bottom: 30px; font-weight: 300; }
 
         /* --- QUIZ SECTION --- */
         .quiz-section {
@@ -315,14 +252,47 @@
         .btn-premium:hover { box-shadow: 0 0 40px rgba(212,175,55,0.5); }
         .premium-visual { background-image: url('5.jpg'); background-size: cover; background-position: center; min-height: 500px; position: relative; filter: saturate(0.8) contrast(1.1); }
 
-        /* --- CATALOG GRID (LIGHTER & TRANSLUCENT) --- */
+        /* Przycisk Concierge (przeniesiony pod kartę) */
+        .concierge-wrapper {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn-concierge {
+            background: transparent;
+            border: 1px solid var(--gold-start);
+            color: var(--gold-start);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.4s;
+            cursor: pointer;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+        .btn-concierge:hover {
+            background: var(--gold-start);
+            color: #000;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* --- CATALOG GRID --- */
         .section-header { text-align: center; max-width: 1200px; margin: 0 auto 60px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; }
         .section-header h3 { color: var(--text-main); text-transform: uppercase; letter-spacing: 4px; font-size: 1.2rem; opacity: 0.7; }
 
         .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto 120px; padding: 0 20px; }
         
         .card {
-            /* TŁO JAŚNIEJSZE - EFEKT SZKŁA */
             background: rgba(40, 42, 48, 0.4); 
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255,255,255,0.08);
@@ -336,11 +306,11 @@
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--gold-start);
-            background: rgba(50, 52, 58, 0.6); /* Jeszcze jaśniej po najechaniu */
+            background: rgba(50, 52, 58, 0.6);
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
         
-        .tag-voivodeship { position: absolute; top: 25px; right: 25px; font-size: 0.65rem; color: #ccc; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; }
+        .tag-voivodeship { position: absolute; top: 25px; right: 25px; font-size: 0.65rem; color: #ccc; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; background: rgba(0,0,0,0.3); }
         .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; margin-top: 5px; }
         .card-info { display: flex; gap: 12px; margin-bottom: 10px; color: #bbb; font-size: 0.95rem; }
         .card-footer { margin-top: auto; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -349,7 +319,7 @@
 
         /* --- EDUCATIONAL GRID --- */
         .edu-section { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; }
-        .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; } /* Zmieniono minmax dla lepszego układu */
         .edu-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid var(--border-subtle);
@@ -426,9 +396,9 @@
             .card-premium { grid-template-columns: 1fr; }
             .premium-visual { min-height: 250px; order: -1; }
             .hero h1 { font-size: 3rem; }
-            .nav-island { gap: 15px; padding: 8px 15px; }
-            .nav-actions { gap: 10px; }
-            .btn-island-cta { font-size: 0.65rem; padding: 10px 15px; }
+            .nav-island { gap: 10px; padding: 8px 15px; flex-wrap: wrap; justify-content: center; }
+            .nav-search { width: 100%; order: 3; }
+            .btn-island-cta { padding: 8px 15px; font-size: 0.65rem; }
         }
     </style>
 </head>
@@ -441,12 +411,11 @@
                 <div class="logo-text">Katalog <span>Ośrodków</span></div>
             </a>
 
-            <div class="nav-actions">
-                <a href="tel:731395295" class="icon-btn" title="Zadzwoń">📞</a>
-                <a href="mailto:kontakt@osrodek-myway.pl" class="icon-btn" title="Napisz">✉️</a>
+            <div class="nav-search">
+                <input type="text" id="menuSearchInput" placeholder="Szukaj ośrodka...">
             </div>
 
-            <button class="btn-island-cta" onclick="openModal('modalAdd')">Zgłoś Ośrodek</button>
+            <button class="btn-island-cta" onclick="openModal('modalAdd')">+ Zgłoś</button>
         </nav>
     </div>
 
@@ -455,17 +424,6 @@
     <section class="hero reveal">
         <h1>Wybierz swoje <span class="gold-text">miejsce</span></h1>
         <p>Ekskluzywna baza prywatnych ośrodków terapii w Polsce.<br>Odkryj przestrzeń, która pozwoli Ci zacząć od nowa.</p>
-        
-        <button class="btn-concierge" onclick="openModal('modalConcierge')">
-            <span>✨ Dobierz ośrodek dla mnie</span>
-        </button>
-
-        <div class="search-container">
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" id="searchInput" placeholder="Szukaj po nazwie lub lokalizacji...">
-            </div>
-        </div>
     </section>
 
     <section class="quiz-section reveal">
@@ -519,7 +477,6 @@
                 </div>
 
                 <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Na podstawie Twoich odpowiedzi.</p>
-                <button class="btn-concierge" style="margin-top: 20px; font-size: 0.8rem; padding: 12px 25px;" onclick="openModal('modalConcierge')">Umów konsultację</button>
             </div>
         </div>
     </section>
@@ -540,6 +497,12 @@
                 <a href="http://osrodek-myway.pl" target="_blank" class="btn-premium">Zobacz Ośrodek</a>
             </div>
             <div class="premium-visual"></div>
+        </div>
+
+        <div class="concierge-wrapper">
+            <button class="btn-concierge" onclick="openModal('modalConcierge')">
+                <span>✨ Dobierz ośrodek dla mnie</span>
+            </button>
         </div>
     </section>
 
@@ -666,7 +629,7 @@
                 <h4>Jak wybrać ośrodek?</h4>
                 <p>Sprawdź, co jest kluczowe przy podejmowaniu decyzji.</p>
                 <div class="edu-content">
-                    Zwróć uwagę na kwalifikacje kadry (certyfikowani terapeuci), dostępność opieki medycznej oraz opinie byłych pacjentów. Ważne jest, aby ośrodek oferował zindywidualizowany plan terapii, a nie tylko grupowe zajęcia.
+                    Zwróć uwagę na kwalifikacje kadry, dostępność opieki medycznej oraz opinie. Ważne jest, aby ośrodek oferował zindywidualizowany plan terapii.
                 </div>
             </div>
 
@@ -675,7 +638,7 @@
                 <h4>Na co uważać?</h4>
                 <p>Czerwone flagi, które powinny Cię zaniepokoić.</p>
                 <div class="edu-content">
-                    Unikaj miejsc, które gwarantują 100% skuteczności (terapia to proces), nie pozwalają na odwiedziny (po okresie aklimatyzacji) lub mają podejrzanie niską cenę w porównaniu do standardu rynkowego.
+                    Unikaj miejsc, które gwarantują 100% skuteczności lub nie pozwalają na odwiedziny.
                 </div>
             </div>
 
@@ -684,7 +647,7 @@
                 <h4>Co zabrać ze sobą?</h4>
                 <p>Lista niezbędnych rzeczy na pobyt stacjonarny.</p>
                 <div class="edu-content">
-                    Wygodne ubrania, środki higieny osobistej, dokumentację medyczną oraz leki przyjmowane na stałe. Warto zabrać książki. Zazwyczaj zakazane są urządzenia z dostępem do internetu (zależy od ośrodka) oraz produkty zawierające alkohol.
+                    Wygodne ubrania, środki higieny, dokumentację medyczną. Zazwyczaj zakazane są urządzenia z internetem.
                 </div>
             </div>
 
@@ -693,7 +656,25 @@
                 <h4>Detoks a Terapia</h4>
                 <p>Czym różnią się te dwa etapy leczenia?</p>
                 <div class="edu-content">
-                    Detoks to proces medyczny oczyszczania organizmu z toksyn (trwa ok. 7-10 dni). Terapia to praca psychologiczna nad mechanizmami uzależnienia. Sam detoks bez terapii rzadko prowadzi do trwałej trzeźwości.
+                    Detoks to oczyszczanie organizmu. Terapia to praca psychologiczna. Sam detoks rzadko wystarcza.
+                </div>
+            </div>
+
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">👨‍👩‍👧</div>
+                <h4>Wsparcie Bliskich</h4>
+                <p>Jak rodzina może mądrze pomagać?</p>
+                <div class="edu-content">
+                    Uzależnienie dotyka całej rodziny. Warto skorzystać z terapii dla współuzależnionych, by nie szkodzić pomagając.
+                </div>
+            </div>
+
+            <div class="edu-card" onclick="toggleEdu(this)">
+                <div class="edu-icon">🌱</div>
+                <h4>Życie po Terapii</h4>
+                <p>Co dzieje się po opuszczeniu ośrodka?</p>
+                <div class="edu-content">
+                    Kluczowe jest planowanie powrotu: grupy wsparcia (AA/NA), terapia dochodząca i unikanie wyzwalaczy.
                 </div>
             </div>
         </div>
@@ -795,8 +776,8 @@
             card.classList.toggle('active');
         }
 
-        // --- LIVE SEARCH ---
-        const searchInput = document.getElementById('searchInput');
+        // --- LIVE SEARCH (MENU INPUT) ---
+        const searchInput = document.getElementById('menuSearchInput');
         const cards = document.querySelectorAll('.card');
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();
@@ -804,6 +785,10 @@
                 const text = card.innerText.toLowerCase();
                 card.style.display = text.includes(term) ? 'flex' : 'none';
             });
+            // Scroll to grid if searching
+            if(term.length > 2) {
+                document.getElementById('grid').scrollIntoView({ behavior: 'smooth' });
+            }
         });
 
         // --- ANIMATIONS ---
