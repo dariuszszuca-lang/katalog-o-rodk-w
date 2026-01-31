@@ -407,6 +407,7 @@
             .nav-island { gap: 10px; padding: 8px 15px; flex-wrap: wrap; justify-content: center; }
             .nav-search { width: 100%; order: 3; }
             .btn-island-cta { padding: 8px 15px; font-size: 0.65rem; }
+            .blog-preview-grid { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -423,6 +424,7 @@
                 <input type="text" id="menuSearchInput" placeholder="Szukaj ośrodka...">
             </div>
 
+            <a href="/blog/" style="color: var(--gold-text); font-size: 0.85rem; font-weight: 600; text-decoration: none;">Blog</a>
             <button class="btn-island-cta" onclick="openModal('modalAdd')">+ Zgłoś</button>
         </nav>
     </div>
@@ -709,6 +711,52 @@
             
             <div class="seo-text-block">
                 <p>Nowoczesna terapia uzależnień opiera się na intensywnej pracy w małych grupach oraz sesjach indywidualnych z certyfikowanymi terapeutami. Prywatne ośrodki zapewniają warunki sprzyjające wyciszeniu: komfortowe pokoje, strefy relaksu i otoczenie natury. Ważnym elementem jest także <strong>opieka poszpitalna</strong> (aftercare), która pomaga utrzymać trzeźwość po opuszczeniu ośrodka.</p>
+            </div>
+        </section>
+
+        <!-- Blog Preview Section -->
+        <section style="margin-bottom: 80px; border-top: 1px solid var(--border-subtle); padding-top: 50px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="color: #fff; font-size: 2rem; margin: 0;">Wiedza o <span class="gold-text">Terapii</span></h2>
+                <a href="/blog/" style="color: var(--gold-text); font-size: 0.9rem; text-decoration: none; font-weight: 600;">Wszystkie artykuły →</a>
+            </div>
+            <div class="blog-preview-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <a href="/blog/rodzaje-uzaleznien/" style="text-decoration: none;">
+                    <div style="background: var(--bg-card-dark); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                        <div style="height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2.5rem;">📋</span>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span style="font-size: 0.7rem; color: var(--gold-text); text-transform: uppercase; letter-spacing: 1px;">Wiedza</span>
+                            <h3 style="color: #fff; font-size: 1rem; margin: 8px 0; font-family: 'Playfair Display', serif;">Rodzaje uzależnień – przewodnik</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Od alkoholu po uzależnienia behawioralne.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/blog/detoks-co-musisz-wiedziec/" style="text-decoration: none;">
+                    <div style="background: var(--bg-card-dark); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                        <div style="height: 120px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2.5rem;">❤️</span>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span style="font-size: 0.7rem; color: var(--gold-text); text-transform: uppercase; letter-spacing: 1px;">Medycyna</span>
+                            <h3 style="color: #fff; font-size: 1rem; margin: 8px 0; font-family: 'Playfair Display', serif;">Detoks – co musisz wiedzieć</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Jak przebiega oczyszczanie organizmu.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/blog/jak-przygotowac-sie-do-terapii/" style="text-decoration: none;">
+                    <div style="background: var(--bg-card-dark); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                        <div style="height: 120px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2.5rem;">✅</span>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span style="font-size: 0.7rem; color: var(--gold-text); text-transform: uppercase; letter-spacing: 1px;">Przygotowanie</span>
+                            <h3 style="color: #fff; font-size: 1rem; margin: 8px 0; font-family: 'Playfair Display', serif;">Jak przygotować się do terapii?</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Praktyczna checklista przed wyjazdem.</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
 

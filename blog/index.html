@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog o Uzależnieniach | Katalog Ośrodków Premium 2026</title>
+    <meta name="description" content="Artykuły eksperckie o leczeniu uzależnień, metodach terapii i procesie zdrowienia. Wiedza od specjalistów dla osób szukających pomocy.">
+    <link rel="canonical" href="https://katalogosrodkow.pl/blog/">
+
+    <meta property="og:title" content="Blog o Uzależnieniach | Katalog Ośrodków Premium">
+    <meta property="og:description" content="Artykuły eksperckie o leczeniu uzależnień i procesie zdrowienia.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Blog","name":"Blog o Uzależnieniach","description":"Artykuły eksperckie o leczeniu uzależnień","url":"https://katalogosrodkow.pl/blog/","publisher":{"@type":"Organization","name":"Katalog Ośrodków Premium"}}
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #0a0b0e;
+            --bg-card: #13151a;
+            --gold-start: #d4af37;
+            --gold-end: #aa8420;
+            --gold-text: #e5c567;
+            --text-main: #f0f0f0;
+            --text-muted: #aab2c0;
+            --border-subtle: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Manrope', sans-serif; }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gold-text { background: linear-gradient(135deg, #fce38a, #d4af37, #aa8420); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        a { text-decoration: none; }
+
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 11, 14, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; color: #fff; }
+        .logo-icon { width: 20px; height: 20px; background: linear-gradient(135deg, var(--gold-start), var(--gold-end)); transform: rotate(45deg); }
+        .logo span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        nav a { color: var(--text-muted); font-size: 0.9rem; margin-left: 2rem; transition: color 0.3s; }
+        nav a:hover { color: var(--gold-text); }
+
+        main { max-width: 1200px; margin: 0 auto; padding: 120px 1.5rem 60px; }
+
+        .hero { text-align: center; margin-bottom: 60px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+        .card-image {
+            height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .card-image svg { width: 60px; height: 60px; color: rgba(255,255,255,0.8); z-index: 1; }
+        .card-category {
+            position: absolute; bottom: 12px; left: 12px;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 0.75rem; color: var(--gold-text); text-transform: uppercase; letter-spacing: 1px;
+        }
+        .card-content { padding: 24px; }
+        .card-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+        .card-title { font-size: 1.25rem; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+        .card-excerpt { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+        .card-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--gold-text); font-size: 0.9rem; font-weight: 600;
+            transition: gap 0.3s;
+        }
+        .card-link:hover { gap: 12px; }
+
+        footer {
+            text-align: center; padding: 40px 20px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted); font-size: 0.85rem;
+        }
+        footer a { color: var(--gold-start); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon"></div>
+                <span>Katalog Ośrodków</span>
+            </a>
+            <nav>
+                <a href="/">Katalog</a>
+                <a href="/blog/" style="color: var(--gold-text);">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Blog o <span class="gold-text">Uzależnieniach</span></h1>
+            <p>Artykuły napisane przez ekspertów. Praktyczna wiedza o leczeniu uzależnień, metodach terapii i drodze do trzeźwości.</p>
+        </section>
+
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <a href="/blog/rodzaje-uzaleznien/">
+                    <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                        <span class="card-category">Wiedza</span>
+                    </div>
+                    <div class="card-content">
+                        <time class="card-date">28 stycznia 2026</time>
+                        <h2 class="card-title">Rodzaje uzależnień – kompleksowy przewodnik</h2>
+                        <p class="card-excerpt">Od alkoholu przez narkotyki po uzależnienia behawioralne. Poznaj mechanizmy, objawy i metody leczenia każdego typu.</p>
+                        <span class="card-link">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card">
+                <a href="/blog/pierwsze-kroki-w-trzezwosci/">
+                    <div class="card-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span class="card-category">Pierwszy krok</span>
+                    </div>
+                    <div class="card-content">
+                        <time class="card-date">25 stycznia 2026</time>
+                        <h2 class="card-title">Pierwsze kroki w trzeźwości – od czego zacząć?</h2>
+                        <p class="card-excerpt">Przyznanie się do problemu to dopiero początek. Poznaj praktyczny plan działania na pierwsze dni i tygodnie trzeźwości.</p>
+                        <span class="card-link">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+                <a href="/blog/detoks-co-musisz-wiedziec/">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        <span class="card-category">Medycyna</span>
+                    </div>
+                    <div class="card-content">
+                        <time class="card-date">22 stycznia 2026</time>
+                        <h2 class="card-title">Detoks – co musisz wiedzieć przed rozpoczęciem</h2>
+                        <p class="card-excerpt">Jak przebiega detoksykacja? Czy jest niebezpieczna? Ile trwa? Wszystko o medycznym oczyszczaniu organizmu.</p>
+                        <span class="card-link">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card">
+                <a href="/blog/terapia-grupowa-vs-indywidualna/">
+                    <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <span class="card-category">Terapia</span>
+                    </div>
+                    <div class="card-content">
+                        <time class="card-date">18 stycznia 2026</time>
+                        <h2 class="card-title">Terapia grupowa vs indywidualna – co wybrać?</h2>
+                        <p class="card-excerpt">Oba podejścia mają swoje zalety. Dowiedz się, która forma terapii będzie najskuteczniejsza w Twojej sytuacji.</p>
+                        <span class="card-link">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card">
+                <a href="/blog/jak-przygotowac-sie-do-terapii/">
+                    <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                        <span class="card-category">Przygotowanie</span>
+                    </div>
+                    <div class="card-content">
+                        <time class="card-date">15 stycznia 2026</time>
+                        <h2 class="card-title">Jak przygotować się do terapii stacjonarnej?</h2>
+                        <p class="card-excerpt">Praktyczna checklista: co spakować, jak załatwić sprawy przed wyjazdem i jak psychicznie nastawić się na leczenie.</p>
+                        <span class="card-link">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Katalog Ośrodków Premium. Wszystkie prawa zastrzeżone.</p>
+        <p style="margin-top: 10px;"><a href="mailto:kontakt@osrodek-myway.pl">kontakt@osrodek-myway.pl</a> | Tel. 731 395 295</p>
+    </footer>
+</body>
+</html>
